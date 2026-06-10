@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leçon 1 — La carte du manche : les 12 notes</title>
+<style>
+  :root {
+    --bg: #faf8f4;
+    --ink: #2b2620;
+    --muted: #7a7265;
+    --accent: #c0392b;
+    --accent-soft: #fdf0ee;
+    --green: #27764b;
+    --green-soft: #eaf5ef;
+    --blue: #2c5f8a;
+    --blue-soft: #edf3f8;
+    --card: #ffffff;
+    --border: #e6e0d6;
+    --wood: #f3e9d8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Avenir Next", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.65;
+    font-size: 17px;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 2.5rem 1.5rem 5rem; }
+  header.lesson-head { border-bottom: 3px solid var(--accent); padding-bottom: 1.2rem; margin-bottom: 2rem; }
+  .kicker { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.78rem; color: var(--accent); font-weight: 700; margin-bottom: 0.4rem; }
+  h1 { font-family: Georgia, "Times New Roman", serif; font-size: 2.1rem; margin: 0 0 0.5rem; line-height: 1.2; }
+  .meta { color: var(--muted); font-size: 0.92rem; }
+  h2 { font-family: Georgia, serif; font-size: 1.45rem; margin-top: 2.8rem; border-left: 4px solid var(--accent); padding-left: 0.7rem; }
+  h3 { font-size: 1.08rem; margin-top: 1.8rem; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem 1.4rem; margin: 1.2rem 0; }
+  .objective { background: var(--accent-soft); border-color: #f0d5d0; }
+  .play { background: var(--green-soft); border-color: #cde5d6; }
+  .play h3, .play .tag { color: var(--green); }
+  .tag { display: inline-block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.3rem; }
+  .objective .tag { color: var(--accent); }
+  .note-fr { color: var(--muted); font-size: 0.92rem; }
+  code, .mono { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.9em; background: #f1ece3; padding: 0.1em 0.35em; border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.95rem; }
+  th, td { border: 1px solid var(--border); padding: 0.45rem 0.7rem; text-align: center; }
+  th { background: #f4efe6; }
+  .fretboard-box { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; margin: 1.2rem 0; overflow-x: auto; }
+  svg text { font-family: "Avenir Next", system-ui, sans-serif; }
+  .quiz { background: var(--blue-soft); border: 1px solid #cfdeea; border-radius: 10px; padding: 1.3rem 1.4rem; margin: 1.4rem 0; }
+  .quiz h3 { color: var(--blue); margin-top: 0; }
+  .quiz-q { font-size: 1.15rem; font-weight: 600; margin: 0.6rem 0; min-height: 1.8em; }
+  .answers { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0.8rem 0; }
+  .answers button, .btn {
+    font-size: 1rem; padding: 0.5rem 0.95rem; border-radius: 8px; border: 1px solid var(--border);
+    background: white; cursor: pointer; font-weight: 600; color: var(--ink);
+    transition: transform 0.06s ease, background 0.15s ease;
+  }
+  .answers button:hover, .btn:hover { background: #f6f2ea; }
+  .answers button:active { transform: scale(0.96); }
+  .answers button.good { background: var(--green); color: white; border-color: var(--green); }
+  .answers button.bad { background: var(--accent); color: white; border-color: var(--accent); }
+  .btn-primary { background: var(--blue); color: white; border-color: var(--blue); }
+  .btn-primary:hover { background: #234b6d; }
+  .feedback { min-height: 1.6em; font-weight: 600; margin-top: 0.4rem; }
+  .feedback.ok { color: var(--green); }
+  .feedback.ko { color: var(--accent); }
+  .score { font-size: 0.9rem; color: var(--muted); margin-top: 0.5rem; }
+  .bignote { font-family: Georgia, serif; font-size: 4.5rem; font-weight: 700; text-align: center; min-height: 5.5rem; color: var(--blue); }
+  .controls { display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap; justify-content: center; }
+  ul.steps li { margin-bottom: 0.5rem; }
+  .repertoire { background: #fbf6ec; border: 1px solid #ecdfc4; border-radius: 10px; padding: 1.2rem 1.4rem; margin: 1.4rem 0; }
+  .repertoire .tag { color: #9a6b1f; }
+  footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.92rem; }
+  a { color: var(--blue); }
+  .next { background: var(--card); border: 1px dashed var(--border); border-radius: 10px; padding: 1rem 1.3rem; margin-top: 2rem; }
+  @media print { .quiz, .controls, button { display: none !important; } body { font-size: 12pt; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="lesson-head">
+  <div class="kicker">Théorie musicale &amp; basse · Module 1 — Socle · Leçon 1</div>
+  <h1>La carte du manche : les 12 notes</h1>
+  <div class="meta">⏱ 25-30 min · 🎸 basse en main · Prérequis : aucun</div>
+</header>
+
+<div class="card objective">
+  <span class="tag">Objectif de la leçon</span>
+  <p style="margin:0.3rem 0 0">À la fin de cette session, tu sauras <strong>nommer n'importe quelle case du manche</strong> entre la case 0 et la case 12 — et tu sauras sur quelles notes démarrent <em>I Feel Good</em>, <em>Billie Jean</em> et <em>Do I Wanna Know</em>. C'est la fondation de toute la suite : on ne peut pas parler d'intervalles, de gammes ou d'accords sans savoir où sont les notes.</p>
+</div>
+
+<h2>1. Il n'y a que 12 notes</h2>
+<p>Toute la musique occidentale — James Brown, Muse, Stevie Wonder — utilise un alphabet de <strong>12 notes</strong>, qui se répète à l'infini du grave à l'aigu. En notation anglo-saxonne (celle qu'on utilisera, c'est celle des tabs, des accords et de 99 % des ressources basse) :</p>
+
+<table>
+  <tr><th>EN</th><td>C</td><td>C♯/D♭</td><td>D</td><td>D♯/E♭</td><td>E</td><td>F</td><td>F♯/G♭</td><td>G</td><td>G♯/A♭</td><td>A</td><td>A♯/B♭</td><td>B</td></tr>
+  <tr><th>FR</th><td>Do</td><td>Do♯</td><td>Ré</td><td>Ré♯</td><td>Mi</td><td>Fa</td><td>Fa♯</td><td>Sol</td><td>Sol♯</td><td>La</td><td>La♯</td><td>Si</td></tr>
+</table>
+
+<p>Trois choses à retenir :</p>
+<ul>
+  <li>L'écart entre deux notes voisines de ce tableau s'appelle un <strong>demi-ton</strong> (EN : <em>half step / semitone</em>). Sur la basse, <strong>1 demi-ton = 1 case</strong>. C'est LA conversion fondamentale entre théorie et manche.</li>
+  <li>Il n'y a <strong>pas de note entre B et C, ni entre E et F</strong>. Ce sont les deux seuls couples de notes « naturelles » collées à un demi-ton. Tout le reste de la logique du manche découle de cette exception.</li>
+  <li>♯ (dièse, EN <em>sharp</em>) = un demi-ton au-dessus ; ♭ (bémol, EN <em>flat</em>) = un demi-ton en dessous. C♯ et D♭ sont la <em>même case</em> — deux noms pour la même note (on verra plus tard quand utiliser l'un ou l'autre).</li>
+</ul>
+<p class="note-fr">Après la 12ème note, l'alphabet recommence : c'est l'<strong>octave</strong>. Un D aigu et un D grave sont « la même note », une octave plus haut ou plus bas.</p>
+
+<h2>2. Les 4 cordes : E – A – D – G</h2>
+<p>Tes cordes à vide, de la plus grave à la plus aiguë : <strong>E (Mi), A (La), D (Ré), G (Sol)</strong>. Chaque corde est un point de départ dans l'alphabet des 12 notes : la case 1 est un demi-ton au-dessus de la corde à vide, la case 2 deux demi-tons, etc. À la <strong>case 12, tu retombes sur la note de la corde à vide</strong>, une octave plus haut — c'est pour ça qu'il y a un double repère sur ta basse à la case 12.</p>
+
+<div class="fretboard-box">
+  <div id="fb-static"></div>
+  <p class="note-fr" style="margin-bottom:0">Le manche vu comme sur une tablature : corde G (aiguë) en haut, corde E (grave) en bas, le sillet à gauche. Les notes en gris clair sont les dièses/bémols. La carte complète imprimable est dans <a href="../reference/carte-du-manche.html">la référence « Carte du manche »</a>.</p>
+</div>
+
+<h3>Les repères qui évitent de tout mémoriser</h3>
+<p>Personne ne mémorise 48 cases par cœur. On mémorise des <strong>points d'ancrage</strong> et on navigue à partir d'eux :</p>
+<ul>
+  <li><strong>Les cases marquées</strong> (3, 5, 7, 9, 12) sont tes phares. Sur la corde E : case 3 = G, case 5 = A, case 7 = B, case 9 = C♯, case 12 = E.</li>
+  <li><strong>La règle de la case 5</strong> : la note à la case 5 d'une corde = la corde suivante à vide. E-5 = A, A-5 = D, D-5 = G. (C'est comme ça qu'on accorde une basse à l'oreille.)</li>
+  <li><strong>La forme d'octave</strong> : depuis n'importe quelle note, <strong>+2 cordes et +2 cases = la même note à l'octave</strong>. D (corde A, case 5) → D (corde G, case 7). Cette forme en diagonale, tu la connais déjà avec les doigts : c'est le saut d'octave de <em>I Wish</em> et de plein de lignes disco/funk.</li>
+</ul>
+
+<div class="repertoire">
+  <span class="tag">Dans ton répertoire</span>
+  <p style="margin:0.3rem 0 0">Tu joues déjà ces notes sans les nommer. Maintenant, nomme-les :</p>
+  <ul style="margin-bottom:0">
+    <li><strong>I Feel Good</strong> — le riff démarre sur <strong>D</strong> : corde A, case 5 (la même note que ta corde D à vide).</li>
+    <li><strong>Billie Jean</strong> — la ligne démarre sur <strong>F♯</strong> : corde E, case 2.</li>
+    <li><strong>Do I Wanna Know?</strong> — le riff démarre sur <strong>G</strong> : corde E, case 3 (une case marquée !).</li>
+    <li><strong>Time Is Running Out</strong> — la ligne tourne autour de <strong>A</strong> : ta corde A à vide.</li>
+  </ul>
+</div>
+
+<h2>3. Basse en main — exercices (10 min)</h2>
+
+<div class="card play">
+  <span class="tag">🎸 Exercice 1 — La corde E en notes naturelles (3 min)</span>
+  <p style="margin:0.4rem 0">Sur la corde E uniquement, joue et <strong>dis à voix haute</strong> les notes naturelles (sans ♯/♭) en montant : <span class="mono">E(0) – F(1) – G(3) – A(5) – B(7) – C(8) – D(10) – E(12)</span>. Puis redescends. Remarque le motif des écarts : F est collé à E (1 case), C est collé à B (1 case), tout le reste saute de 2 cases.</p>
+  <p style="margin:0" class="note-fr">Refais la même chose sur la corde A : <span class="mono">A(0) – B(2) – C(3) – D(5) – E(7) – F(8) – G(10) – A(12)</span>.</p>
+</div>
+
+<div class="card play">
+  <span class="tag">🎸 Exercice 2 — Chasse à la note (4 min)</span>
+  <p style="margin:0.4rem 0">Trouve <strong>tous les D</strong> entre la case 0 et la case 12, sur les 4 cordes. Il y en a 5 : <span class="mono">E-10, A-5, D-0, D-12, G-7</span>. Joue-les l'un après l'autre, lentement, en disant « D » à chaque fois. Puis fais pareil avec <strong>tous les G</strong> (E-3, A-10, D-5, G-0, G-12).</p>
+  <p style="margin:0" class="note-fr">D et G d'abord, parce que ce sont les fondamentales de <em>I Feel Good</em> et <em>Do I Wanna Know</em>.</p>
+</div>
+
+<div class="card play">
+  <span class="tag">🎸 Exercice 3 — Octaves (3 min)</span>
+  <p style="margin:0.4rem 0">Joue la forme d'octave (+2 cordes, +2 cases) depuis : F♯ (E-2), A (E-5), C (A-3), D (A-5). À chaque fois : note grave, note aiguë, et dis le nom. C'est le geste de base du funk — tu le retrouveras dans <em>I Wish</em>.</p>
+</div>
+
+<h2>4. Quiz interactifs</h2>
+<p>Objectif : <strong>10 bonnes réponses d'affilée</strong> au quiz 1. Prends ton temps, utilise les phares (cases 3-5-7-9-12) et la règle de la case 5 plutôt que de compter case par case depuis le sillet.</p>
+
+<div class="quiz">
+  <h3>Quiz 1 — Nomme cette case</h3>
+  <p class="note-fr" style="margin-top:-0.4rem">Un point apparaît sur le manche. Quelle est cette note ?</p>
+  <div id="q1-board"></div>
+  <div class="quiz-q" id="q1-question"></div>
+  <div class="answers" id="q1-answers"></div>
+  <div class="feedback" id="q1-feedback"></div>
+  <div class="score" id="q1-score">Série : 0 · Record : 0</div>
+</div>
+
+<div class="quiz">
+  <h3>Quiz 2 — Trouve la note sur le manche</h3>
+  <p class="note-fr" style="margin-top:-0.4rem">Je te donne une note, clique une case qui correspond (n'importe quelle corde, cases 0 à 12 — la case 0 est la pastille à gauche du sillet).</p>
+  <div class="quiz-q" id="q2-question"></div>
+  <div id="q2-board"></div>
+  <div class="feedback" id="q2-feedback"></div>
+  <div class="score" id="q2-score">Trouvées : 0</div>
+</div>
+
+<div class="quiz">
+  <h3>Quiz 3 — Drill basse en main</h3>
+  <p class="note-fr" style="margin-top:-0.4rem">L'écran te donne une note : trouve-la sur ta vraie basse (au moins 2 positions) avant la suivante. Commence en mode manuel, puis active le mode auto quand tu te sens prêt.</p>
+  <div class="bignote" id="q3-note">—</div>
+  <div class="controls">
+    <button class="btn btn-primary" id="q3-next">Note suivante</button>
+    <button class="btn" id="q3-auto">▶ Mode auto (10 s)</button>
+    <label class="note-fr"><input type="checkbox" id="q3-sharps"> inclure les ♯/♭</label>
+  </div>
+</div>
+
+<h2>5. Pour aller plus loin</h2>
+<ul>
+  <li>StudyBass — le bloc <a href="https://www.studybass.com/lessons/">« Study Guide »</a> couvre le manche et la théorie dans un ordre proche du nôtre (en anglais).</li>
+  <li><a href="https://www.musictheory.net/lessons">musictheory.net</a> — leçons et exercices interactifs de théorie pure (gratuit, en anglais).</li>
+</ul>
+
+<div class="next">
+  <strong>Prochaine leçon :</strong> les premiers intervalles — l'octave et la quinte, les deux formes que ta main connaît déjà, et pourquoi la quinte est l'arme n°1 du bassiste. On commencera à analyser <em>I Feel Good</em>.
+</div>
+
+<footer>
+  <p>💬 Une question, un point flou, un exercice trop dur ou trop facile ? Demande à ton agent-prof dans le terminal — il peut t'expliquer autrement, générer d'autres exercices ou adapter la leçon.</p>
+  <p>Références : <a href="../reference/carte-du-manche.html">Carte du manche</a> · Leçon suivante : <em>à venir</em></p>
+</footer>
+
+</div>
+
+<script>
+const NOTES = ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
+const NATURALS = ['C','D','E','F','G','A','B'];
+// Cordes affichées de haut (G aigu) en bas (E grave), pitch class de la corde à vide
+const STRINGS = [
+  {label:'G', open:7},
+  {label:'D', open:2},
+  {label:'A', open:9},
+  {label:'E', open:4},
+];
+const FRETS = 12;
+const noteAt = (s, f) => NOTES[(STRINGS[s].open + f) % 12];
+const isNatural = n => !n.includes('#');
+
+// ---------- Rendu du manche en SVG ----------
+function drawFretboard(containerId, opts = {}) {
+  const { showNames = false, dot = null, clickable = false, onCellClick = null } = opts;
+  const W = 760, H = 170, left = 50, top = 18, right = 10;
+  const fw = (W - left - right) / FRETS;
+  const sh = (H - top - 24) / (STRINGS.length - 1);
+  const svgNS = 'http://www.w3.org/2000/svg';
+  const svg = document.createElementNS(svgNS, 'svg');
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  svg.style.width = '100%';
+  svg.style.minWidth = '640px';
+
+  const rect = document.createElementNS(svgNS, 'rect');
+  rect.setAttribute('x', left); rect.setAttribute('y', top - 10);
+  rect.setAttribute('width', W - left - right); rect.setAttribute('height', sh * 3 + 20);
+  rect.setAttribute('fill', '#f3e9d8'); rect.setAttribute('rx', 4);
+  svg.appendChild(rect);
+
+  // Frettes
+  for (let f = 0; f <= FRETS; f++) {
+    const x = left + f * fw;
+    const line = document.createElementNS(svgNS, 'line');
+    line.setAttribute('x1', x); line.setAttribute('x2', x);
+    line.setAttribute('y1', top - 10); line.setAttribute('y2', top + sh * 3 + 10);
+    line.setAttribute('stroke', f === 0 ? '#2b2620' : '#b8a98e');
+    line.setAttribute('stroke-width', f === 0 ? 6 : 2);
+    svg.appendChild(line);
+  }
+  // Repères (3,5,7,9 simple ; 12 double)
+  [3,5,7,9,12].forEach(f => {
+    const x = left + (f - 0.5) * fw;
+    const ys = f === 12 ? [top + sh * 0.5 + sh * 0.0, top + sh * 2.5] : [top + sh * 1.5];
+    ys.forEach(y => {
+      const c = document.createElementNS(svgNS, 'circle');
+      c.setAttribute('cx', x); c.setAttribute('cy', y); c.setAttribute('r', 7);
+      c.setAttribute('fill', '#d9cbb0');
+      svg.appendChild(c);
+    });
+    const t = document.createElementNS(svgNS, 'text');
+    t.setAttribute('x', x); t.setAttribute('y', H - 4);
+    t.setAttribute('text-anchor', 'middle'); t.setAttribute('font-size', '12');
+    t.setAttribute('fill', '#7a7265');
+    t.textContent = f;
+    svg.appendChild(t);
+  });
+  // Cordes + labels
+  STRINGS.forEach((s, i) => {
+    const y = top + i * sh;
+    const line = document.createElementNS(svgNS, 'line');
+    line.setAttribute('x1', left); line.setAttribute('x2', W - right);
+    line.setAttribute('y1', y); line.setAttribute('y2', y);
+    line.setAttribute('stroke', '#5a5247');
+    line.setAttribute('stroke-width', 1.5 + i * 0.8);
+    svg.appendChild(line);
+    const t = document.createElementNS(svgNS, 'text');
+    t.setAttribute('x', 14); t.setAttribute('y', y + 5);
+    t.setAttribute('font-size', '15'); t.setAttribute('font-weight', '700');
+    t.setAttribute('fill', '#2b2620');
+    t.textContent = s.label;
+    svg.appendChild(t);
+  });
+  // Noms de notes
+  if (showNames) {
+    STRINGS.forEach((s, i) => {
+      const y = top + i * sh;
+      for (let f = 0; f <= FRETS; f++) {
+        const n = noteAt(i, f);
+        const x = f === 0 ? left - 14 : left + (f - 0.5) * fw;
+        if (f === 0) continue; // labels de corde déjà affichés
+        const nat = isNatural(n);
+        const c = document.createElementNS(svgNS, 'circle');
+        c.setAttribute('cx', x); c.setAttribute('cy', y); c.setAttribute('r', 11);
+        c.setAttribute('fill', nat ? '#2c5f8a' : '#e8e2d7');
+        svg.appendChild(c);
+        const t = document.createElementNS(svgNS, 'text');
+        t.setAttribute('x', x); t.setAttribute('y', y + 4);
+        t.setAttribute('text-anchor', 'middle'); t.setAttribute('font-size', nat ? '11' : '9');
+        t.setAttribute('font-weight', '700');
+        t.setAttribute('fill', nat ? 'white' : '#9a917f');
+        t.textContent = n.replace('#','♯');
+        svg.appendChild(t);
+      }
+    });
+  }
+  // Point unique (quiz 1)
+  if (dot) {
+    const y = top + dot.string * sh;
+    const x = dot.fret === 0 ? left - 16 : left + (dot.fret - 0.5) * fw;
+    const c = document.createElementNS(svgNS, 'circle');
+    c.setAttribute('cx', x); c.setAttribute('cy', y); c.setAttribute('r', 12);
+    c.setAttribute('fill', '#c0392b');
+    svg.appendChild(c);
+  }
+  // Zones cliquables (quiz 2)
+  if (clickable) {
+    STRINGS.forEach((s, i) => {
+      const y = top + i * sh;
+      for (let f = 0; f <= FRETS; f++) {
+        const x = f === 0 ? left - 16 : left + (f - 0.5) * fw;
+        const hit = document.createElementNS(svgNS, 'circle');
+        hit.setAttribute('cx', x); hit.setAttribute('cy', y); hit.setAttribute('r', Math.min(fw, sh) / 2.1);
+        hit.setAttribute('fill', 'transparent');
+        hit.style.cursor = 'pointer';
+        hit.addEventListener('click', () => onCellClick(i, f, x, y, svg));
+        svg.appendChild(hit);
+        if (f === 0) {
+          const ring = document.createElementNS(svgNS, 'circle');
+          ring.setAttribute('cx', x); ring.setAttribute('cy', y); ring.setAttribute('r', 9);
+          ring.setAttribute('fill', 'none'); ring.setAttribute('stroke', '#b8a98e');
+          ring.setAttribute('stroke-width', 1.5);
+          svg.appendChild(ring);
+        }
+      }
+    });
+  }
+  const container = document.getElementById(containerId);
+  container.innerHTML = '';
+  container.appendChild(svg);
+  return svg;
+}
+
+// ---------- Manche statique annoté ----------
+drawFretboard('fb-static', { showNames: true });
+
+// ---------- Quiz 1 : nomme cette case ----------
+let q1 = { streak: 0, best: 0, current: null, locked: false };
+function q1Next() {
+  q1.locked = false;
+  const s = Math.floor(Math.random() * 4);
+  const f = Math.floor(Math.random() * 13);
+  q1.current = { string: s, fret: f, note: noteAt(s, f) };
+  drawFretboard('q1-board', { dot: { string: s, fret: f } });
+  document.getElementById('q1-question').textContent =
+    `Corde ${STRINGS[s].label}, case ${f} — quelle note ?`;
+  document.getElementById('q1-feedback').textContent = '';
+  document.getElementById('q1-feedback').className = 'feedback';
+  const box = document.getElementById('q1-answers');
+  box.innerHTML = '';
+  NOTES.forEach(n => {
+    const b = document.createElement('button');
+    b.textContent = n.includes('#') ? `${n.replace('#','♯')}/${NOTES[(NOTES.indexOf(n)+1)%12]}♭` : n;
+    b.addEventListener('click', () => q1Answer(n, b));
+    box.appendChild(b);
+  });
+}
+function q1Answer(n, btn) {
+  if (q1.locked) return;
+  const fb = document.getElementById('q1-feedback');
+  if (n === q1.current.note) {
+    q1.locked = true;
+    btn.classList.add('good');
+    q1.streak++;
+    q1.best = Math.max(q1.best, q1.streak);
+    fb.textContent = q1.streak >= 10 ? `✔ ${n.replace('#','♯')} — 🎉 10 d'affilée, objectif atteint !` : `✔ Oui, ${n.replace('#','♯')} !`;
+    fb.className = 'feedback ok';
+    setTimeout(q1Next, 900);
+  } else {
+    btn.classList.add('bad');
+    q1.streak = 0;
+    fb.textContent = '✘ Non — indice : pars de la case marquée la plus proche.';
+    fb.className = 'feedback ko';
+    setTimeout(() => btn.classList.remove('bad'), 600);
+  }
+  document.getElementById('q1-score').textContent = `Série : ${q1.streak} · Record : ${q1.best}`;
+}
+q1Next();
+
+// ---------- Quiz 2 : trouve la note ----------
+let q2 = { target: null, found: 0 };
+function q2Next() {
+  q2.target = NOTES[Math.floor(Math.random() * 12)];
+  document.getElementById('q2-question').textContent =
+    `Clique sur un ${q2.target.replace('#','♯')}${q2.target.includes('#') ? ' (= ' + NOTES[(NOTES.indexOf(q2.target)+1)%12] + '♭)' : ''}`;
+  drawFretboard('q2-board', { clickable: true, onCellClick: q2Click });
+  document.getElementById('q2-feedback').textContent = '';
+  document.getElementById('q2-feedback').className = 'feedback';
+}
+function q2Click(s, f, x, y, svg) {
+  const n = noteAt(s, f);
+  const fb = document.getElementById('q2-feedback');
+  const svgNS = 'http://www.w3.org/2000/svg';
+  const c = document.createElementNS(svgNS, 'circle');
+  c.setAttribute('cx', x); c.setAttribute('cy', y); c.setAttribute('r', 12);
+  svg.appendChild(c);
+  if (n === q2.target) {
+    c.setAttribute('fill', '#27764b');
+    q2.found++;
+    fb.textContent = `✔ ${n.replace('#','♯')} — corde ${STRINGS[s].label}, case ${f}. Bien vu !`;
+    fb.className = 'feedback ok';
+    document.getElementById('q2-score').textContent = `Trouvées : ${q2.found}`;
+    setTimeout(q2Next, 1100);
+  } else {
+    c.setAttribute('fill', '#c0392b');
+    fb.textContent = `✘ Ça, c'est un ${n.replace('#','♯')}. Cherche encore.`;
+    fb.className = 'feedback ko';
+    setTimeout(() => c.remove(), 800);
+  }
+}
+q2Next();
+
+// ---------- Quiz 3 : drill basse en main ----------
+let q3timer = null;
+function q3Pick() {
+  const pool = document.getElementById('q3-sharps').checked ? NOTES : NATURALS;
+  const n = pool[Math.floor(Math.random() * pool.length)];
+  document.getElementById('q3-note').textContent = n.replace('#','♯');
+}
+document.getElementById('q3-next').addEventListener('click', q3Pick);
+document.getElementById('q3-auto').addEventListener('click', function () {
+  if (q3timer) {
+    clearInterval(q3timer); q3timer = null;
+    this.textContent = '▶ Mode auto (10 s)';
+  } else {
+    q3Pick();
+    q3timer = setInterval(q3Pick, 10000);
+    this.textContent = '⏸ Stop';
+  }
+});
+</script>
+</body>
+</html>

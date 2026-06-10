@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Référence — Carte du manche (basse 4 cordes, E A D G)</title>
+<style>
+  :root {
+    --ink: #2b2620; --muted: #7a7265; --accent: #c0392b; --blue: #2c5f8a;
+    --border: #e6e0d6; --wood: #f3e9d8;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #faf8f4; color: var(--ink); font-family: "Avenir Next", "Segoe UI", system-ui, sans-serif; line-height: 1.55; font-size: 15px; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 2rem 1.5rem 3rem; }
+  h1 { font-family: Georgia, serif; font-size: 1.7rem; margin: 0 0 0.2rem; }
+  .kicker { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.72rem; color: var(--accent); font-weight: 700; }
+  h2 { font-family: Georgia, serif; font-size: 1.2rem; margin-top: 1.8rem; border-left: 4px solid var(--accent); padding-left: 0.6rem; }
+  table { border-collapse: collapse; width: 100%; margin: 0.8rem 0; font-size: 0.88rem; }
+  th, td { border: 1px solid var(--border); padding: 0.35rem 0.5rem; text-align: center; }
+  th { background: #f4efe6; }
+  td.nat { font-weight: 700; color: var(--blue); }
+  td.acc { color: #9a917f; font-size: 0.8rem; }
+  td.mark { background: #fbf3e2; }
+  .legend { color: var(--muted); font-size: 0.85rem; }
+  .rules { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin: 1rem 0; }
+  .rule { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 0.8rem 1rem; }
+  .rule b { color: var(--blue); }
+  .mono { font-family: "SF Mono", Menlo, monospace; font-size: 0.88em; background: #f1ece3; padding: 0.05em 0.3em; border-radius: 4px; }
+  footer { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+  a { color: var(--blue); }
+  @media print { body { font-size: 11pt; } .rules { grid-template-columns: 1fr 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="kicker">Référence · Module 1 — Socle</div>
+<h1>Carte du manche — basse 4 cordes (E A D G)</h1>
+<p class="legend">Cases 0 à 12. En <b style="color:#2c5f8a">bleu gras</b> : notes naturelles. En gris : dièses/bémols (deux noms, même case). Fond crème : cases marquées (3 · 5 · 7 · 9 · 12). Après la case 12, tout se répète une octave plus haut (case 13 = case 1, etc.).</p>
+
+<table>
+  <tr>
+    <th>Corde \ Case</th><th>0 (à vide)</th><th>1</th><th>2</th><th class="">3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th>
+  </tr>
+  <tr>
+    <th>G (Sol)</th>
+    <td class="nat">G</td><td class="acc">G♯/A♭</td><td class="nat">A</td><td class="acc mark">A♯/B♭</td><td class="nat">B</td><td class="nat mark">C</td><td class="acc">C♯/D♭</td><td class="nat mark">D</td><td class="acc">D♯/E♭</td><td class="nat mark">E</td><td class="nat">F</td><td class="acc">F♯/G♭</td><td class="nat mark">G</td>
+  </tr>
+  <tr>
+    <th>D (Ré)</th>
+    <td class="nat">D</td><td class="acc">D♯/E♭</td><td class="nat">E</td><td class="nat mark">F</td><td class="acc">F♯/G♭</td><td class="nat mark">G</td><td class="acc">G♯/A♭</td><td class="nat mark">A</td><td class="acc">A♯/B♭</td><td class="nat mark">B</td><td class="nat">C</td><td class="acc">C♯/D♭</td><td class="nat mark">D</td>
+  </tr>
+  <tr>
+    <th>A (La)</th>
+    <td class="nat">A</td><td class="acc">A♯/B♭</td><td class="nat">B</td><td class="nat mark">C</td><td class="acc">C♯/D♭</td><td class="nat mark">D</td><td class="acc">D♯/E♭</td><td class="nat mark">E</td><td class="nat">F</td><td class="acc mark">F♯/G♭</td><td class="nat">G</td><td class="acc">G♯/A♭</td><td class="nat mark">A</td>
+  </tr>
+  <tr>
+    <th>E (Mi)</th>
+    <td class="nat">E</td><td class="nat">F</td><td class="acc">F♯/G♭</td><td class="nat mark">G</td><td class="acc">G♯/A♭</td><td class="nat mark">A</td><td class="acc">A♯/B♭</td><td class="nat mark">B</td><td class="nat">C</td><td class="acc mark">C♯/D♭</td><td class="nat">D</td><td class="acc">D♯/E♭</td><td class="nat mark">E</td>
+  </tr>
+</table>
+
+<h2>L'alphabet des 12 notes</h2>
+<table>
+  <tr><th>EN</th><td class="nat">C</td><td class="acc">C♯/D♭</td><td class="nat">D</td><td class="acc">D♯/E♭</td><td class="nat">E</td><td class="nat">F</td><td class="acc">F♯/G♭</td><td class="nat">G</td><td class="acc">G♯/A♭</td><td class="nat">A</td><td class="acc">A♯/B♭</td><td class="nat">B</td></tr>
+  <tr><th>FR</th><td>Do</td><td>Do♯/Ré♭</td><td>Ré</td><td>Ré♯/Mi♭</td><td>Mi</td><td>Fa</td><td>Fa♯/Sol♭</td><td>Sol</td><td>Sol♯/La♭</td><td>La</td><td>La♯/Si♭</td><td>Si</td></tr>
+</table>
+<p class="legend">1 case = 1 demi-ton (half step). 2 cases = 1 ton (whole step). Pas de note entre <b>B–C</b> ni entre <b>E–F</b>.</p>
+
+<h2>Les 4 règles de navigation</h2>
+<div class="rules">
+  <div class="rule"><b>Les phares.</b> Mémorise les cases marquées de la corde E (<span class="mono">3=G, 5=A, 7=B, 9=C♯, 12=E</span>) et A (<span class="mono">3=C, 5=D, 7=E, 9=F♯, 12=A</span>). Navigue depuis le phare le plus proche.</div>
+  <div class="rule"><b>Règle de la case 5.</b> Case 5 d'une corde = corde suivante à vide. <span class="mono">E-5=A · A-5=D · D-5=G</span>.</div>
+  <div class="rule"><b>Forme d'octave.</b> +2 cordes, +2 cases = même note, une octave plus haut. <span class="mono">A-5 (D) → G-7 (D)</span>.</div>
+  <div class="rule"><b>Case 12.</b> Case 12 = corde à vide, une octave plus haut. Au-delà, la carte se répète (case 14 = case 2…).</div>
+</div>
+
+<h2>Fondamentales du répertoire</h2>
+<table>
+  <tr><th>Morceau</th><th>Note de départ</th><th>Position usuelle</th></tr>
+  <tr><td>I Feel Good — James Brown</td><td class="nat">D</td><td>corde A, case 5</td></tr>
+  <tr><td>Billie Jean — Michael Jackson</td><td class="nat">F♯</td><td>corde E, case 2</td></tr>
+  <tr><td>Do I Wanna Know? — Arctic Monkeys</td><td class="nat">G</td><td>corde E, case 3</td></tr>
+  <tr><td>Time Is Running Out — Muse</td><td class="nat">A</td><td>corde A à vide (ou E, case 5)</td></tr>
+</table>
+
+<footer>
+  Document de référence du workspace <i>music-theory-bass</i> · Issu de la <a href="../lessons/0001-la-carte-du-manche.html">leçon 1 — La carte du manche</a> · Conçu pour être imprimé.
+</footer>
+
+</div>
+</body>
+</html>
