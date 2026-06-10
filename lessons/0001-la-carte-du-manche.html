@@ -40,6 +40,7 @@
   h3 { font-size: 1.08rem; margin-top: 1.8rem; }
   .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem 1.4rem; margin: 1.2rem 0; }
   .objective { background: var(--accent-soft); border-color: #f0d5d0; }
+  .rule-card { border-left: 4px solid var(--blue); }
   .play { background: var(--green-soft); border-color: #cde5d6; }
   .play h3, .play .tag { color: var(--green); }
   .tag { display: inline-block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.3rem; }
@@ -105,11 +106,11 @@
 
 <div class="card objective">
   <span class="tag">Objectif de la leçon</span>
-  <p style="margin:0.3rem 0 0">À la fin de cette session, tu sauras <strong>nommer n'importe quelle case du manche</strong> entre la case 0 et la case 12 — et tu sauras sur quelles notes démarrent <em>I Feel Good</em>, <em>Billie Jean</em> et <em>Do I Wanna Know</em>. C'est la fondation de toute la suite : on ne peut pas parler d'intervalles, de gammes ou d'accords sans savoir où sont les notes.</p>
+  <p style="margin:0.3rem 0 0">À la fin de cette session, tu sauras <strong>nommer n'importe quelle case du manche</strong> entre la case 0 et la case 12. C'est la fondation de toute la suite : on ne peut pas parler d'intervalles, de gammes ou d'accords sans savoir où sont les notes.</p>
 </div>
 
 <h2>1. Il n'y a que 12 notes</h2>
-<p>Toute la musique occidentale — James Brown, Muse, Stevie Wonder — utilise un alphabet de <strong>12 notes</strong>, qui se répète à l'infini du grave à l'aigu. En notation anglo-saxonne (celle qu'on utilisera, c'est celle des tabs, des accords et de 99 % des ressources basse) :</p>
+<p>Toute la musique occidentale utilise un alphabet de <strong>12 notes</strong>, qui se répète à l'infini du grave à l'aigu. En notation anglo-saxonne (celle qu'on utilisera, c'est celle des tabs, des accords et de 99 % des ressources basse) :</p>
 
 <table>
   <tr><th>EN</th><td>C</td><td>C♯/D♭</td><td>D</td><td>D♯/E♭</td><td>E</td><td>F</td><td>F♯/G♭</td><td>G</td><td>G♯/A♭</td><td>A</td><td>A♯/B♭</td><td>B</td></tr>
@@ -132,22 +133,21 @@
   <p class="note-fr" style="margin-bottom:0">Le manche vu comme sur une tablature : corde G (aiguë) en haut, corde E (grave) en bas, le sillet à gauche. Les notes en gris clair sont les dièses/bémols. La carte complète imprimable est dans <a href="../reference/carte-du-manche.html">la référence « Carte du manche »</a>.</p>
 </div>
 
-<h3>Le socle : 3 règles qui suffisent à tout retrouver</h3>
-<p>Personne ne mémorise 48 cases par cœur. On mémorise un petit socle logique et on navigue à partir de lui :</p>
-<ul>
-  <li><strong>Tu n'as que 2 cordes à apprendre.</strong> La corde D est la copie de la corde E décalée de 2 cases (E-3 = G → D-5 = G), et la corde G est la copie de la corde A (A-3 = C → G-5 = C). Apprends E et A à fond : D et G s'en déduisent mécaniquement. (Zoom détaillé juste en dessous.)</li>
-  <li><strong>La forme d'octave (« 2+2 »)</strong> : depuis n'importe quelle note, <strong>+2 cordes et +2 cases = la même note à l'octave</strong>. D (corde A, case 5) → D (corde G, case 7). Ça marche aussi en descente (−2 cordes, −2 cases). Cette diagonale, tes doigts la connaissent déjà : c'est le saut d'octave de <em>I Wish</em> et de plein de lignes disco/funk — et c'est elle qui fait de D et G des copies de E et A.</li>
-  <li><strong>L'unisson « −5 »</strong> : n'importe quelle note = <strong>la corde du dessus, 5 cases plus bas</strong> — exactement la même note, à l'unisson. C (corde E, case 8) = C (corde A, case 3). La corde à vide n'est que le cas particulier : case 5 = corde suivante à vide (E-5 = A, A-5 = D, D-5 = G — c'est comme ça qu'on accorde une basse à l'oreille).</li>
-</ul>
+<h2>3. Le socle : 3 règles pour tout retrouver</h2>
+<p>Personne ne mémorise 48 cases par cœur. On mémorise un petit socle logique — trois règles, dans cet ordre — et on navigue à partir de lui.</p>
 
-<div class="card" style="border-color:#cfdeea">
-  <span class="tag" style="color:var(--blue)">Zoom — pourquoi 2 cordes suffisent</span>
-  <p style="margin:0.4rem 0"><strong>D'où ça vient.</strong> Ce n'est pas une coïncidence, c'est la forme d'octave 2+2 lue à l'envers. La corde D est exactement 2 cordes au-dessus de la corde E : chaque case de la corde D a donc son octave « 2 cases plus bas » sur la corde E — <em>même nom de note</em>, une octave d'écart. Toute la corde D est l'ombre de la corde E, poussée de 2 cases vers l'aigu. Et le même raisonnement lie G à A.</p>
+<div class="card rule-card">
+  <span class="tag" style="color:var(--blue)">Règle 1 — La diagonale d'octave « 2+2 »</span>
+  <p style="margin:0.4rem 0 0">Depuis n'importe quelle note : <strong>+2 cordes et +2 cases = la même note, une octave plus haut</strong>. D (corde A, case 5) → D (corde G, case 7). Ça marche aussi en descente (−2 cordes, −2 cases). Tes doigts la connaissent sans doute déjà : c'est le saut d'octave qu'on entend dans plein de lignes disco-funk.</p>
+</div>
+
+<div class="card rule-card">
+  <span class="tag" style="color:var(--blue)">Règle 2 — Tu n'as que 2 cordes à apprendre</span>
+  <p style="margin:0.4rem 0">Prends une note sur la corde E — disons G, case 3. Applique la diagonale d'octave : +2 cordes, +2 cases → corde D, case 5 : <strong>encore un G</strong>. Et ça marche pour <em>n'importe quelle</em> case. Autrement dit : <strong>la corde D, c'est la corde E décalée de 2 cases</strong>. Même chose entre A et G. Donc : <strong>apprends E et A à fond, D et G s'en déduisent.</strong></p>
   <div id="fb-copies"></div>
-  <p class="note-fr" style="margin:0.2rem 0 0.8rem">Les deux diagonales : E-3 (G) → D-5 (G) en bleu, A-3 (C) → G-5 (C) en rouge. La diagonale est toujours la même : +2 cordes, +2 cases.</p>
-  <p style="margin:0.4rem 0"><strong>En pratique, pour nommer une case sur D ou G :</strong> recule de 2 cases et lis la corde E (ou A). Exemples : D-7 → je regarde E-5 = A, donc <strong>D-7 = A</strong>. G-4 → je regarde A-2 = B, donc <strong>G-4 = B</strong>.</p>
-  <p style="margin:0.4rem 0"><strong>Dans l'autre sens, pour trouver une note sur D ou G :</strong> trouve-la d'abord sur E (ou A), puis avance de 2 cases. « Où est F sur la corde D ? » → F est en E-1, donc <strong>F est en D-3</strong>.</p>
-  <p style="margin:0.4rem 0"><strong>Le seul cas limite : les cases 0 et 1 de D et G</strong> (reculer de 2 t'enverrait avant le sillet). Pas besoin de règle : tu connais la corde à vide, compte depuis elle. D-1 = D♯/E♭, G-1 = G♯/A♭.</p>
+  <p class="note-fr" style="margin:0.2rem 0 0.8rem">Les deux copies : E-3 (G) → D-5 (G) en bleu, A-3 (C) → G-5 (C) en rouge. C'est toujours la diagonale 2+2.</p>
+  <p style="margin:0.4rem 0"><strong>Nommer une case sur D ou G :</strong> recule de 2 cases, lis E (ou A). D-7 → E-5 = A, donc <strong>D-7 = A</strong>. <strong>Trouver une note sur D ou G :</strong> trouve-la sur E (ou A), puis avance de 2 cases. F est en E-1, donc <strong>F est en D-3</strong>.</p>
+  <p style="margin:0.4rem 0">Seul cas limite : les <strong>cases 0 et 1</strong> de D et G (reculer de 2 t'enverrait avant le sillet) — compte simplement depuis la corde à vide. D-1 = D♯/E♭, G-1 = G♯/A♭.</p>
   <details style="margin-top:0.6rem">
     <summary style="cursor:pointer;font-weight:600">Mini-drill : nomme D-9, G-6, D-4 et G-10 par dérivation, puis vérifie ici</summary>
     <ul style="margin:0.5rem 0 0">
@@ -157,29 +157,24 @@
       <li>G-10 → A-8 = F → <strong>G-10 = F</strong></li>
     </ul>
   </details>
-  <p class="note-fr" style="margin:0.8rem 0 0">À terme, tu n'auras plus besoin de la dérivation : à force de l'utiliser, D-7 = A deviendra un réflexe direct. La règle est un échafaudage, pas une béquille permanente — c'est exactement comme ça qu'on a tous appris.</p>
+  <p class="note-fr" style="margin:0.8rem 0 0">À force de l'utiliser, D-7 = A deviendra un réflexe direct : la dérivation est un échafaudage, pas une béquille permanente.</p>
 </div>
 
-<h3>Les accélérateurs : pour aller plus vite une fois le socle posé</h3>
+<div class="card rule-card">
+  <span class="tag" style="color:var(--blue)">Règle 3 — L'unisson « −5 »</span>
+  <p style="margin:0.4rem 0 0">N'importe quelle note = <strong>la corde du dessus, 5 cases plus bas</strong> — exactement la même note, à l'unisson. C (corde E, case 8) = C (corde A, case 3). Cas particulier à connaître : <strong>case 5 = la corde suivante à vide</strong> (E-5 = A, A-5 = D, D-5 = G — c'est comme ça qu'on accorde une basse à l'oreille).</p>
+</div>
+
+<h2>4. Les accélérateurs — à survoler pour aujourd'hui</h2>
+<p>Quatre raccourcis qui font gagner du temps <em>une fois le socle en place</em>. Survole-les sans chercher à les retenir : ils t'attendent sur <a href="../reference/carte-du-manche.html">la fiche de référence</a>, reviens-y quand les 3 règles tournent toutes seules.</p>
 <ul>
-  <li><strong>« Sur les points, tout est naturel »</strong> : cases 3-5-7 = <strong>G-A-B sur la corde E</strong> (sol-la-si) et <strong>C-D-E sur la corde A</strong> (do-ré-mi). Six notes naturelles posées sur les repères visuels de ta basse. Seul piège : la case 9 est le point « dièse » (C♯ sur E, F♯ sur A) — ancre plutôt les cases <strong>8 et 10</strong> (C et D sur E ; F et G sur A).</li>
-  <li><strong>La règle de la case 7</strong> (jumelle de la règle −5) : case 7 d'une corde = la corde du dessous (plus grave) à l'octave. A-7 = E, D-7 = A, G-7 = D. Les cases 5 et 7 sont les ponts entre cordes voisines, dans les deux sens.</li>
-  <li><strong>Case 12 et au-delà</strong> : case 12 = la corde à vide à l'octave, puis toute la carte se rejoue à l'identique (case 14 = case 2, case 15 = case 3…).</li>
-  <li><strong>Règle de jeu : ne compte jamais depuis le sillet.</strong> Avec ces ancres, n'importe quelle case est à 2 cases maximum d'une note naturelle connue. Si tu te surprends à compter depuis la case 0, c'est le signal que tu n'utilises pas tes phares.</li>
+  <li><strong>« Sur les points, tout est naturel »</strong> : cases 3-5-7 = G-A-B sur la corde E, C-D-E sur la corde A. Piège : la case 9 est le point « dièse » — ancre plutôt les cases 8 et 10.</li>
+  <li><strong>La règle de la case 7</strong> : case 7 = la corde du dessous (plus grave) à l'octave. A-7 = E, D-7 = A, G-7 = D.</li>
+  <li><strong>Case 12 et au-delà</strong> : case 12 = la corde à vide à l'octave, puis toute la carte se rejoue (case 14 = case 2…).</li>
+  <li><strong>Ne compte jamais depuis le sillet</strong> : toute case est à 2 cases maximum d'un repère connu. Si tu comptes depuis la case 0, tu n'utilises pas tes phares.</li>
 </ul>
 
-<div class="repertoire">
-  <span class="tag">Dans ton répertoire</span>
-  <p style="margin:0.3rem 0 0">Tu joues déjà ces notes sans les nommer. Maintenant, nomme-les :</p>
-  <ul style="margin-bottom:0">
-    <li><strong>I Feel Good</strong> — le riff démarre sur <strong>D</strong> : corde A, case 5 (la même note que ta corde D à vide).</li>
-    <li><strong>Billie Jean</strong> — la ligne démarre sur <strong>F♯</strong> : corde E, case 2.</li>
-    <li><strong>Do I Wanna Know?</strong> — le riff démarre sur <strong>G</strong> : corde E, case 3 (une case marquée !).</li>
-    <li><strong>Time Is Running Out</strong> — la ligne tourne autour de <strong>A</strong> : ta corde A à vide.</li>
-  </ul>
-</div>
-
-<h2>3. Basse en main — exercices (10 min)</h2>
+<h2>5. Basse en main — exercices (10 min)</h2>
 
 <div class="card play">
   <span class="tag">🎸 Exercice 1 — La corde E en notes naturelles (3 min)</span>
@@ -190,12 +185,11 @@
 <div class="card play">
   <span class="tag">🎸 Exercice 2 — Chasse à la note (4 min)</span>
   <p style="margin:0.4rem 0">Trouve <strong>tous les D</strong> entre la case 0 et la case 12, sur les 4 cordes. Il y en a 5 : <span class="mono">E-10, A-5, D-0, D-12, G-7</span>. Joue-les l'un après l'autre, lentement, en disant « D » à chaque fois. Puis fais pareil avec <strong>tous les G</strong> (E-3, A-10, D-5, G-0, G-12).</p>
-  <p style="margin:0" class="note-fr">D et G d'abord, parce que ce sont les fondamentales de <em>I Feel Good</em> et <em>Do I Wanna Know</em>.</p>
 </div>
 
 <div class="card play">
   <span class="tag">🎸 Exercice 3 — Octaves (3 min)</span>
-  <p style="margin:0.4rem 0">Joue la forme d'octave (+2 cordes, +2 cases) depuis : F♯ (E-2), A (E-5), C (A-3), D (A-5). À chaque fois : note grave, note aiguë, et dis le nom. C'est le geste de base du funk — tu le retrouveras dans <em>I Wish</em>.</p>
+  <p style="margin:0.4rem 0">Joue la forme d'octave (+2 cordes, +2 cases) depuis : F♯ (E-2), A (E-5), C (A-3), D (A-5). À chaque fois : note grave, note aiguë, et dis le nom. C'est le geste de base du funk et du disco.</p>
 </div>
 
 <div class="card play">
@@ -209,12 +203,12 @@
   </div>
 </div>
 
-<h2>4. Quiz — deux sessions chronométrées</h2>
-<p>Chaque quiz est une <strong>session de 20 questions chronométrée</strong>. Une erreur ne bloque pas — tu corriges et tu continues — mais elle coûte <strong>+5 s</strong> au score final (score = temps + pénalités). Ton meilleur score est mémorisé par ton navigateur. Objectif en deux temps : d'abord une session <strong>sans erreur</strong>, peu importe le temps ; ensuite, fais baisser le chrono — c'est lui qui transforme la précision en réflexe.</p>
+<h2>6. Le quiz — une session chronométrée</h2>
+<p>Une seule session de <strong>20 questions</strong>, qui mélange tout ce que tu viens d'apprendre : nommer une case, trouver une note, appliquer les 3 règles du socle. Une erreur ne bloque pas — tu corriges et tu continues — mais elle coûte <strong>+5 s</strong> au score final (score = temps + pénalités). Ton meilleur score est mémorisé par ton navigateur. Objectif en deux temps : d'abord une session <strong>sans erreur</strong>, peu importe le temps ; ensuite, fais baisser le chrono — c'est lui qui transforme la précision en réflexe.</p>
 
 <div class="quiz">
-  <h3>Quiz 1 — La carte du manche</h3>
-  <p class="note-fr" style="margin-top:-0.4rem">Deux types de questions mélangés : « quelle est cette note ? » (réponds avec les boutons) et « clique sur un … » (réponds sur le manche, n'importe quelle position — la case 0 est la pastille à gauche du sillet).</p>
+  <h3>La carte et le socle en action</h3>
+  <p class="note-fr" style="margin-top:-0.4rem">Selon la question, réponds avec les boutons (« quelle est cette note ? ») ou en cliquant sur le manche (« clique sur… », « applique la règle… » — la pastille grise est alors ton point de départ ; la case 0 est la pastille à gauche du sillet).</p>
   <div class="session-bar">
     <button class="btn btn-primary" id="q1-start">▶ Démarrer la session</button>
     <span class="session-status" id="q1-status"></span>
@@ -226,20 +220,7 @@
   <div class="score" id="q1-result"></div>
 </div>
 
-<div class="quiz">
-  <h3>Quiz 2 — Le socle en action</h3>
-  <p class="note-fr" style="margin-top:-0.4rem">Chaque question teste une des 3 règles du socle. La pastille grise est ton point de départ : clique la case demandée. L'idée n'est pas de connaître la réponse par cœur, mais d'<em>appliquer la règle</em> — le chrono te pousse justement à passer par la règle plutôt que par le comptage.</p>
-  <div class="session-bar">
-    <button class="btn btn-primary" id="q4-start">▶ Démarrer la session</button>
-    <span class="session-status" id="q4-status"></span>
-  </div>
-  <div class="quiz-q" id="q4-question"></div>
-  <div id="q4-board"></div>
-  <div class="feedback" id="q4-feedback"></div>
-  <div class="score" id="q4-result"></div>
-</div>
-
-<h2>5. Pour aller plus loin</h2>
+<h2>7. Pour aller plus loin</h2>
 <ul>
   <li>StudyBass — le bloc <a href="https://www.studybass.com/lessons/">« Study Guide »</a> couvre le manche et la théorie dans un ordre proche du nôtre (en anglais).</li>
   <li><a href="https://www.musictheory.net/lessons">musictheory.net</a> — leçons et exercices interactifs de théorie pure (gratuit, en anglais).</li>
@@ -501,163 +482,152 @@ function createSession(cfg) {
   };
 }
 
-// ---------- Quiz 1 : la carte du manche (nomme / trouve, mélangés) ----------
-let q1cur = null, q1lock = false;
-const s1 = createSession({
-  len: 20, key: 'btb-l1-carte',
+// ---------- Le quiz : la carte et le socle en action (session unique) ----------
+let qcur = null, qlock = false;
+function setFb(txt, ok) {
+  const fb = document.getElementById('q1-feedback');
+  fb.textContent = txt;
+  fb.className = ok ? 'feedback ok' : 'feedback ko';
+}
+const sess = createSession({
+  len: 20, key: 'btb-l1-mix',
   statusId: 'q1-status', resultId: 'q1-result', startId: 'q1-start',
-  onQuestion: q1Next,
+  onQuestion: qNext,
   onDone: () => {
     document.getElementById('q1-question').textContent = '🎉 Session terminée !';
     document.getElementById('q1-answers').innerHTML = '';
     drawFretboard('q1-board', {});
   },
 });
-function q1Next() {
-  q1lock = false;
+document.getElementById('q1-start').addEventListener('click', () => {
   const fb = document.getElementById('q1-feedback');
   fb.textContent = ''; fb.className = 'feedback';
+});
+function qNext() {
+  qlock = false;
   const answers = document.getElementById('q1-answers');
   answers.innerHTML = '';
-  if (Math.random() < 0.5) {
-    // « nomme cette case » : répondre avec les boutons
+  const type = ['name', 'find', 'copie', 'octave', 'unisson'][Math.floor(Math.random() * 5)];
+  if (type === 'name') {
+    // « quelle est cette note ? » : répondre avec les boutons
     const s = Math.floor(Math.random() * 4);
     const f = Math.floor(Math.random() * 13);
-    q1cur = { mode: 'name', note: noteAt(s, f) };
+    qcur = { type: type, note: noteAt(s, f) };
     drawFretboard('q1-board', { dot: { string: s, fret: f } });
     document.getElementById('q1-question').textContent = `Corde ${STRINGS[s].label}, case ${f} — quelle note ?`;
     NOTES.forEach(n => {
       const b = document.createElement('button');
       b.textContent = n.includes('#') ? `${disp(n)}/${NOTES[(NOTES.indexOf(n) + 1) % 12]}♭` : n;
       b.addEventListener('click', () => {
-        if (!s1.running() || q1lock) return;
-        if (n === q1cur.note) {
-          q1lock = true;
+        if (!sess.running() || qlock || qcur.type !== 'name') return;
+        if (n === qcur.note) {
+          qlock = true;
           b.classList.add('good');
-          fb.textContent = `✔ Oui, ${disp(n)} !`;
-          fb.className = 'feedback ok';
-          if (s1.right()) setTimeout(q1Next, 600);
+          setFb(`✔ Oui, ${disp(n)} !`, true);
+          if (sess.right()) setTimeout(qNext, 900);
         } else {
           b.classList.add('bad');
-          s1.wrong();
-          fb.textContent = '✘ Non — indice : pars de la case marquée la plus proche.';
-          fb.className = 'feedback ko';
+          sess.wrong();
+          const up = (NOTES.indexOf(qcur.note) - NOTES.indexOf(n) + 12) % 12;
+          const d = up <= 6
+            ? `${up} demi-ton${up > 1 ? 's' : ''} plus haut`
+            : `${12 - up} demi-ton${12 - up > 1 ? 's' : ''} plus bas`;
+          setFb(`✘ Non — la bonne note est ${d} que ${disp(n)}.`, false);
           setTimeout(() => b.classList.remove('bad'), 600);
         }
       });
       answers.appendChild(b);
     });
-  } else {
+  } else if (type === 'find') {
     // « trouve la note » : répondre sur le manche
     const target = NOTES[Math.floor(Math.random() * 12)];
-    q1cur = { mode: 'find', target: target };
+    qcur = { type: type, target: target };
     document.getElementById('q1-question').textContent =
       `Clique sur un ${disp(target)}${target.includes('#') ? ' (= ' + NOTES[(NOTES.indexOf(target) + 1) % 12] + '♭)' : ''}`;
-    drawFretboard('q1-board', { clickable: true, onCellClick: (s, f, x, y, svg) => {
-      if (!s1.running() || q1lock || q1cur.mode !== 'find') return;
-      const n = noteAt(s, f);
-      const svgNS = 'http://www.w3.org/2000/svg';
-      const c = document.createElementNS(svgNS, 'circle');
-      c.setAttribute('cx', x); c.setAttribute('cy', y); c.setAttribute('r', 12);
-      svg.appendChild(c);
-      if (n === target) {
-        q1lock = true;
-        c.setAttribute('fill', '#27764b');
-        fb.textContent = `✔ ${disp(n)} — corde ${STRINGS[s].label}, case ${f}.`;
-        fb.className = 'feedback ok';
-        if (s1.right()) setTimeout(q1Next, 600);
-      } else {
-        c.setAttribute('fill', '#c0392b');
-        s1.wrong();
-        fb.textContent = `✘ Ça, c'est un ${disp(n)}. Cherche encore.`;
-        fb.className = 'feedback ko';
-        setTimeout(() => c.remove(), 700);
-      }
-    }});
-  }
-}
-document.getElementById('q1-question').textContent = 'Clique sur « Démarrer la session » quand tu es prêt.';
-drawFretboard('q1-board', {});
-
-// ---------- Quiz 2 : le socle en action (3 règles) ----------
-let q4cur = null, q4lock = false;
-const s4 = createSession({
-  len: 20, key: 'btb-l1-socle',
-  statusId: 'q4-status', resultId: 'q4-result', startId: 'q4-start',
-  onQuestion: q4Next,
-  onDone: () => {
-    document.getElementById('q4-question').textContent = '🎉 Session terminée !';
-    drawFretboard('q4-board', {});
-  },
-});
-function q4Next() {
-  q4lock = false;
-  const type = ['copie', 'octave', 'unisson'][Math.floor(Math.random() * 3)];
-  let src, tgt, prompt;
-  if (type === 'copie') {
-    const sIdx = Math.random() < 0.5 ? 1 : 0;           // D ou G
-    const f = 2 + Math.floor(Math.random() * 11);        // cases 2..12
-    src = { string: sIdx, fret: f };
-    tgt = { string: sIdx + 2, fret: f - 2 };             // E ou A, 2 cases plus bas
-    prompt = `Règle « 2 cordes » — quelle case de la corde ${STRINGS[tgt.string].label} porte le même nom que ${STRINGS[sIdx].label}-${f} ?`;
-  } else if (type === 'octave') {
-    const sIdx = 2 + Math.floor(Math.random() * 2);      // A ou E
-    const f = Math.floor(Math.random() * 11);            // cases 0..10
-    src = { string: sIdx, fret: f };
-    tgt = { string: sIdx - 2, fret: f + 2 };
-    prompt = `Forme d'octave « 2+2 » — où est l'octave (vers l'aigu) de ${STRINGS[sIdx].label}-${f} ?`;
+    drawFretboard('q1-board', { clickable: true, onCellClick: qClick });
   } else {
-    const sIdx = 1 + Math.floor(Math.random() * 3);      // D, A ou E
-    const f = 5 + Math.floor(Math.random() * 8);         // cases 5..12
-    src = { string: sIdx, fret: f };
-    tgt = { string: sIdx - 1, fret: f - 5 };
-    prompt = `Unisson « −5 » — la même note exactement que ${STRINGS[sIdx].label}-${f}, sur la corde ${STRINGS[tgt.string].label} ?`;
+    // une des 3 règles du socle, depuis une pastille de départ
+    let src, tgt, prompt;
+    if (type === 'copie') {
+      const sIdx = Math.random() < 0.5 ? 1 : 0;           // D ou G
+      const f = 2 + Math.floor(Math.random() * 11);        // cases 2..12
+      src = { string: sIdx, fret: f };
+      tgt = { string: sIdx + 2, fret: f - 2 };             // E ou A, 2 cases plus bas
+      prompt = `Règle « 2 cordes » — quelle case de la corde ${STRINGS[tgt.string].label} porte le même nom que ${STRINGS[sIdx].label}-${f} ?`;
+    } else if (type === 'octave') {
+      const sIdx = 2 + Math.floor(Math.random() * 2);      // A ou E
+      const f = Math.floor(Math.random() * 11);            // cases 0..10
+      src = { string: sIdx, fret: f };
+      tgt = { string: sIdx - 2, fret: f + 2 };
+      prompt = `Diagonale « 2+2 » — où est l'octave (vers l'aigu) de ${STRINGS[sIdx].label}-${f} ?`;
+    } else {
+      const sIdx = 1 + Math.floor(Math.random() * 3);      // D, A ou E
+      const f = 5 + Math.floor(Math.random() * 8);         // cases 5..12
+      src = { string: sIdx, fret: f };
+      tgt = { string: sIdx - 1, fret: f - 5 };
+      prompt = `Unisson « −5 » — la même note exactement que ${STRINGS[sIdx].label}-${f}, sur la corde ${STRINGS[tgt.string].label} ?`;
+    }
+    qcur = { type: type, src: src, tgt: tgt };
+    document.getElementById('q1-question').textContent = prompt;
+    drawFretboard('q1-board', {
+      dots: [{ ...src, color: '#7a7265', label: disp(noteAt(src.string, src.fret)) }],
+      clickable: true,
+      onCellClick: qClick,
+    });
   }
-  q4cur = { type: type, src: src, tgt: tgt };
-  document.getElementById('q4-question').textContent = prompt;
-  drawFretboard('q4-board', {
-    dots: [{ ...src, color: '#7a7265', label: disp(noteAt(src.string, src.fret)) }],
-    clickable: true,
-    onCellClick: q4Click,
-  });
-  document.getElementById('q4-feedback').textContent = '';
-  document.getElementById('q4-feedback').className = 'feedback';
 }
-function q4Click(s, f, x, y, svg) {
-  if (!s4.running() || q4lock) return;
-  const { type, src, tgt } = q4cur;
-  const fb = document.getElementById('q4-feedback');
+function qClick(s, f, x, y, svg) {
+  if (!sess.running() || qlock || qcur.type === 'name') return;
   const svgNS = 'http://www.w3.org/2000/svg';
   const c = document.createElementNS(svgNS, 'circle');
   c.setAttribute('cx', x); c.setAttribute('cy', y); c.setAttribute('r', 12);
   svg.appendChild(c);
   const note = disp(noteAt(s, f));
+  if (qcur.type === 'find') {
+    if (noteAt(s, f) === qcur.target) {
+      qlock = true;
+      c.setAttribute('fill', '#27764b');
+      setFb(`✔ ${note} — corde ${STRINGS[s].label}, case ${f}.`, true);
+      if (sess.right()) setTimeout(qNext, 900);
+    } else {
+      c.setAttribute('fill', '#c0392b');
+      sess.wrong();
+      const up = (NOTES.indexOf(qcur.target) - NOTES.indexOf(noteAt(s, f)) + 12) % 12;
+      const d = up <= 6
+        ? `${up} case${up > 1 ? 's' : ''} plus haut`
+        : `${12 - up} case${12 - up > 1 ? 's' : ''} plus bas`;
+      setFb(`✘ Ça, c'est ${note}. Sur la même corde, le ${disp(qcur.target)} le plus proche est ${d}.`, false);
+      setTimeout(() => c.remove(), 900);
+    }
+    return;
+  }
+  const { type, src, tgt } = qcur;
   if (s === tgt.string && f === tgt.fret) {
-    q4lock = true;
+    qlock = true;
     c.setAttribute('fill', '#27764b');
-    const explain = {
-      copie: `✔ ${STRINGS[s].label}-${f} = ${note}, même nom que ${STRINGS[src.string].label}-${src.fret} : la corde ${STRINGS[src.string].label} est la copie de ${STRINGS[s].label} décalée de 2 cases.`,
+    setFb({
+      copie: `✔ ${STRINGS[s].label}-${f} = ${note} : la corde ${STRINGS[src.string].label} est la copie de ${STRINGS[s].label} décalée de 2 cases.`,
       octave: `✔ ${note} à l'octave : +2 cordes, +2 cases.`,
       unisson: `✔ Même hauteur exactement : ${STRINGS[src.string].label}-${src.fret} = ${STRINGS[s].label}-${f} (${note}).`,
-    }[type];
-    fb.textContent = explain;
-    fb.className = 'feedback ok';
-    if (s4.right()) setTimeout(q4Next, 900);
+    }[type], true);
+    if (sess.right()) setTimeout(qNext, 900);
   } else {
     c.setAttribute('fill', '#c0392b');
-    s4.wrong();
-    const hint = {
-      copie: 'recule de 2 cases en sautant 2 cordes.',
-      octave: 'la diagonale : +2 cordes ET +2 cases.',
-      unisson: 'corde du dessus, 5 cases plus bas.',
+    sess.wrong();
+    const ruleHint = {
+      copie: `depuis ${STRINGS[src.string].label}-${src.fret}, saute 2 cordes et recule de 2 cases`,
+      octave: 'la diagonale, +2 cordes ET +2 cases',
+      unisson: 'corde du dessus, 5 cases plus bas',
     }[type];
-    fb.textContent = `✘ Ça, c'est ${STRINGS[s].label}-${f} (${note}). Indice : ${hint}`;
-    fb.className = 'feedback ko';
+    const where = s === tgt.string
+      ? 'Bonne corde, mais pas la bonne case'
+      : `Pas la bonne corde — la règle t'envoie sur la corde ${STRINGS[tgt.string].label}`;
+    setFb(`✘ ${where} (tu as cliqué ${STRINGS[s].label}-${f} = ${note}). Indice : ${ruleHint}.`, false);
     setTimeout(() => c.remove(), 900);
   }
 }
-document.getElementById('q4-question').textContent = 'Clique sur « Démarrer la session » quand tu es prêt.';
-drawFretboard('q4-board', {});
+document.getElementById('q1-question').textContent = 'Clique sur « Démarrer la session » quand tu es prêt.';
+drawFretboard('q1-board', {});
 
 // ---------- Drill basse en main (exercice 4) ----------
 let q3timer = null;

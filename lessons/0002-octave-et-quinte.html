@@ -123,7 +123,7 @@
 <p class="note-fr">Surprise : tu en connaissais déjà deux. L'unisson « −5 » et l'octave « 2+2 » de la leçon 1 étaient des intervalles déguisés en règles de navigation. Aujourd'hui on leur donne leur vrai nom, et on ajoute le plus important de tous pour un bassiste : la quinte.</p>
 
 <h2>2. L'octave : tu la connais déjà</h2>
-<p><strong>12 demi-tons.</strong> Même nom de note, fréquence doublée : l'oreille entend « la même note, en plus aigu ». Sur le manche, c'est la diagonale <strong>2+2</strong> que tes doigts connaissent — le saut d'octave de <em>I Wish</em> et le moteur de tout le jeu disco/funk.</p>
+<p><strong>12 demi-tons.</strong> Même nom de note, fréquence doublée : l'oreille entend « la même note, en plus aigu ». Sur le manche, c'est la diagonale <strong>2+2</strong> de la leçon 1 — le saut d'octave qu'on entend dans tout le jeu disco-funk.</p>
 
 <div class="fretboard-box">
   <div id="fb-octave"></div>
@@ -141,22 +141,11 @@
 </div>
 
 <h2>4. Le triangle du bassiste</h2>
-<p>Assemble les deux : <strong>fondamentale + quinte + octave = un triangle</strong>. Une seule forme, déplaçable partout, qui ne change jamais. Des milliers de lignes de basse n'utilisent rien d'autre (plus quelques notes de passage). C'est le premier « mot » complet de ton vocabulaire.</p>
+<p>Assemble les deux : <strong>fondamentale + quinte + octave = un triangle</strong>. Une seule forme, déplaçable partout, qui ne change jamais. Des milliers de lignes de basse n'utilisent rien d'autre (plus quelques notes de passage). C'est le premier « mot » complet de ton vocabulaire : pose-le sur D, sur G, sur A — le geste ne change jamais, seule la case de départ bouge.</p>
 
 <div class="fretboard-box">
   <div id="fb-triangle"></div>
   <p class="note-fr" style="margin-bottom:0">Le triangle posé sur F♯ (celui de <em>Billie Jean</em>) : fondamentale F♯ (E-2), quinte C♯ (A-4), octave F♯ (D-4). Remarque : l'octave est <em>sur la même case</em> que la quinte, une corde plus haut.</p>
-</div>
-
-<div class="repertoire">
-  <span class="tag">Dans ton répertoire</span>
-  <p style="margin:0.3rem 0 0">Le même triangle, posé sur les fondamentales que tu connais déjà :</p>
-  <ul style="margin-bottom:0">
-    <li><strong>I Feel Good</strong> — triangle sur D : <span class="mono">A-5 · D-7 · G-7</span></li>
-    <li><strong>Billie Jean</strong> — triangle sur F♯ : <span class="mono">E-2 · A-4 · D-4</span></li>
-    <li><strong>Do I Wanna Know?</strong> — triangle sur G : <span class="mono">E-3 · A-5 · D-5</span></li>
-    <li><strong>Time Is Running Out</strong> — triangle sur A : <span class="mono">E-5 · A-7 · D-7</span> (ou depuis la corde A à vide)</li>
-  </ul>
 </div>
 
 <h2>5. Analyse — la ligne de <em>Billie Jean</em></h2>
@@ -176,7 +165,6 @@ E ||——2———————————————————————
 </div>
 
 <p>Compte : <strong>5 notes sur 8 sont le triangle</strong> (la fondamentale, l'octave, et la quinte jouée trois fois). Les trois autres (E, E, B) sont des <strong>notes de passage</strong> (EN : <em>passing notes</em>) qui relient les sommets du triangle et donnent le mouvement. C'est pour ça que la ligne « tourne » toute seule : l'oreille entend une armature ultra-solide — fondamentale, quinte, octave — et le reste glisse entre les deux. Ces notes de passage ont aussi des noms d'intervalles ; on les nommera quand on aura la gamme mineure en main.</p>
-<p class="note-fr">Et <em>I Feel Good</em> ? Le riff de James Brown est bâti sur la même logique, mais il lui faut un intervalle qu'on n'a pas encore : la <strong>tierce</strong>. On l'analysera en entier à la leçon sur les arpèges — patience, il arrive.</p>
 
 <h2>6. Basse en main — exercices (10 min)</h2>
 
@@ -206,34 +194,21 @@ E ||——2———————————————————————
   </div>
 </div>
 
-<h2>7. Quiz — deux sessions chronométrées</h2>
-<p>Même format que la leçon 1 : <strong>20 questions chronométrées</strong>, une erreur coûte <strong>+5 s</strong> (score = temps + pénalités), meilleur score mémorisé par ton navigateur. D'abord sans erreur, ensuite fais baisser le chrono.</p>
+<h2>7. Le quiz — une session chronométrée</h2>
+<p>Même format que la leçon 1 : une seule session de <strong>20 questions chronométrée</strong>, qui mélange « place la quinte », « place l'octave » et « quel intervalle ? ». Une erreur coûte <strong>+5 s</strong> (score = temps + pénalités), ton meilleur score est mémorisé par ton navigateur. D'abord sans erreur, ensuite fais baisser le chrono.</p>
 
 <div class="quiz">
-  <h3>Quiz 1 — Place l'intervalle</h3>
-  <p class="note-fr" style="margin-top:-0.4rem">La pastille grise est la fondamentale : clique la quinte ou l'octave demandée, <em>vers l'aigu</em>. Toute position juste est acceptée — mais la forme compacte est la plus rapide, et le chrono le sait.</p>
+  <h3>Les intervalles en action</h3>
+  <p class="note-fr" style="margin-top:-0.4rem">Selon la question : clique la case demandée sur le manche (la pastille grise est la fondamentale ; toute position juste est acceptée, mais la forme compacte est la plus rapide), ou réponds avec les boutons quand deux pastilles s'affichent.</p>
   <div class="session-bar">
     <button class="btn btn-primary" id="qa-start">▶ Démarrer la session</button>
     <span class="session-status" id="qa-status"></span>
   </div>
   <div class="quiz-q" id="qa-question"></div>
   <div id="qa-board"></div>
+  <div class="answers" id="qa-answers"></div>
   <div class="feedback" id="qa-feedback"></div>
   <div class="score" id="qa-result"></div>
-</div>
-
-<div class="quiz">
-  <h3>Quiz 2 — Quel intervalle ?</h3>
-  <p class="note-fr" style="margin-top:-0.4rem">Deux pastilles sur le manche : quel intervalle les sépare ? Astuce : même nom + même hauteur = unisson ; même nom mais plus aigu = octave ; nom différent = quinte.</p>
-  <div class="session-bar">
-    <button class="btn btn-primary" id="qb-start">▶ Démarrer la session</button>
-    <span class="session-status" id="qb-status"></span>
-  </div>
-  <div class="quiz-q" id="qb-question"></div>
-  <div id="qb-board"></div>
-  <div class="answers" id="qb-answers"></div>
-  <div class="feedback" id="qb-feedback"></div>
-  <div class="score" id="qb-result"></div>
 </div>
 
 <h2>8. Pour aller plus loin</h2>
@@ -245,7 +220,7 @@ E ||——2———————————————————————
 </ul>
 
 <div class="next">
-  <strong>Prochaine leçon :</strong> la gamme majeure sur le manche — d'où viennent les noms des intervalles (quinte = 5<sup>e</sup> degré…), la première forme à un doigté, et le début de l'analyse de <em>I Feel Good</em>.
+  <strong>Prochaine leçon :</strong> la gamme majeure sur le manche — d'où viennent les noms des intervalles (quinte = 5<sup>e</sup> degré…), et la première forme à un doigté.
 </div>
 
 <footer>
@@ -530,38 +505,122 @@ function createSession(cfg) {
   };
 }
 
-// ---------- Quiz 1 : place l'intervalle ----------
-let qaCur = null, qaLock = false;
-const sa = createSession({
-  len: 20, key: 'btb-l2-place',
+// ---------- Le quiz : les intervalles en action (session unique) ----------
+let qcur = null, qlock = false;
+function setFb(txt, ok) {
+  const fb = document.getElementById('qa-feedback');
+  fb.textContent = txt;
+  fb.className = ok ? 'feedback ok' : 'feedback ko';
+}
+const sess = createSession({
+  len: 20, key: 'btb-l2-mix',
   statusId: 'qa-status', resultId: 'qa-result', startId: 'qa-start',
-  onQuestion: qaNext,
+  onQuestion: qNext,
   onDone: () => {
     document.getElementById('qa-question').textContent = '🎉 Session terminée !';
+    document.getElementById('qa-answers').innerHTML = '';
     drawFretboard('qa-board', {});
   },
 });
-function qaNext() {
-  qaLock = false;
+document.getElementById('qa-start').addEventListener('click', () => {
   const fb = document.getElementById('qa-feedback');
   fb.textContent = ''; fb.className = 'feedback';
-  const kind = Math.random() < 0.5 ? 'quinte' : 'octave';
-  let s, f;
-  if (kind === 'quinte') { s = 1 + Math.floor(Math.random() * 3); f = Math.floor(Math.random() * 11); }
-  else { s = 2 + Math.floor(Math.random() * 2); f = Math.floor(Math.random() * 11); }
-  qaCur = { kind: kind, s: s, f: f, targetAbs: absAt(s, f) + (kind === 'quinte' ? 7 : 12) };
-  document.getElementById('qa-question').textContent =
-    `${kind === 'quinte' ? 'Place la quinte' : "Place l'octave"} de ${disp(noteAt(s, f))} (${STRINGS[s].label}-${f}) — vers l'aigu.`;
-  drawFretboard('qa-board', {
-    dots: [{ string: s, fret: f, color: '#7a7265', label: disp(noteAt(s, f)) }],
-    clickable: true,
-    onCellClick: qaClick,
-  });
+});
+function qNext() {
+  qlock = false;
+  const answers = document.getElementById('qa-answers');
+  answers.innerHTML = '';
+  const type = ['placeQ', 'placeO', 'ident'][Math.floor(Math.random() * 3)];
+  if (type !== 'ident') {
+    // « place la quinte / l'octave » : répondre sur le manche
+    const kind = type === 'placeQ' ? 'quinte' : 'octave';
+    let s, f;
+    if (kind === 'quinte') { s = 1 + Math.floor(Math.random() * 3); f = Math.floor(Math.random() * 11); }
+    else { s = 2 + Math.floor(Math.random() * 2); f = Math.floor(Math.random() * 11); }
+    qcur = { type: 'place', kind: kind, s: s, f: f, targetAbs: absAt(s, f) + (kind === 'quinte' ? 7 : 12) };
+    document.getElementById('qa-question').textContent =
+      `${kind === 'quinte' ? 'Place la quinte' : "Place l'octave"} de ${disp(noteAt(s, f))} (${STRINGS[s].label}-${f}) — vers l'aigu.`;
+    drawFretboard('qa-board', {
+      dots: [{ string: s, fret: f, color: '#7a7265', label: disp(noteAt(s, f)) }],
+      clickable: true,
+      onCellClick: qClick,
+    });
+  } else {
+    // « quel intervalle ? » : répondre avec les boutons
+    const kind = ['unisson', 'quinte', 'octave'][Math.floor(Math.random() * 3)];
+    let a, b; // a = position grave, b = position aiguë (ou égale)
+    if (kind === 'unisson') {
+      const s = Math.floor(Math.random() * 3);            // G, D ou A comme corde du haut
+      const f = Math.floor(Math.random() * 8);            // 0..7
+      a = { string: s + 1, fret: f + 5 };
+      b = { string: s, fret: f };
+    } else if (kind === 'quinte') {
+      if (Math.random() < 0.6) {
+        const s = 1 + Math.floor(Math.random() * 3);      // forme compacte
+        const f = Math.floor(Math.random() * 11);
+        a = { string: s, fret: f };
+        b = { string: s - 1, fret: f + 2 };
+      } else {
+        const s = Math.floor(Math.random() * 4);          // même corde, +7
+        const f = Math.floor(Math.random() * 6);
+        a = { string: s, fret: f };
+        b = { string: s, fret: f + 7 };
+      }
+    } else {
+      const v = Math.random();
+      if (v < 0.5) {
+        const s = 2 + Math.floor(Math.random() * 2);      // diagonale 2+2
+        const f = Math.floor(Math.random() * 11);
+        a = { string: s, fret: f };
+        b = { string: s - 2, fret: f + 2 };
+      } else if (v < 0.75) {
+        const s = Math.floor(Math.random() * 4);          // corde à vide → case 12
+        a = { string: s, fret: 0 };
+        b = { string: s, fret: 12 };
+      } else {
+        const s = Math.floor(Math.random() * 3);          // pont de la case 7
+        const f = Math.floor(Math.random() * 6);
+        a = { string: s + 1, fret: f };
+        b = { string: s, fret: f + 7 };
+      }
+    }
+    qcur = { type: 'ident', kind: kind, a: a, b: b };
+    document.getElementById('qa-question').textContent = 'Quel est l’intervalle entre les deux pastilles ?';
+    drawFretboard('qa-board', { dots: [
+      { string: a.string, fret: a.fret, color: '#7a7265', label: disp(noteAt(a.string, a.fret)) },
+      { string: b.string, fret: b.fret, color: '#2c5f8a', label: disp(noteAt(b.string, b.fret)) },
+    ]});
+    [['unisson', 'Unisson'], ['quinte', 'Quinte'], ['octave', 'Octave']].forEach(([val, lab]) => {
+      const btn = document.createElement('button');
+      btn.textContent = lab;
+      btn.addEventListener('click', () => {
+        if (!sess.running() || qlock || qcur.type !== 'ident') return;
+        if (val === qcur.kind) {
+          qlock = true;
+          btn.classList.add('good');
+          setFb({
+            unisson: '✔ Unisson — même hauteur exactement : la règle « −5 » de la leçon 1.',
+            quinte: "✔ Quinte — 7 demi-tons : corde d'à côté +2 cases (ou +7 sur la même corde).",
+            octave: '✔ Octave — 12 demi-tons : la diagonale 2+2 (ou case 12, ou le pont de la case 7).',
+          }[val], true);
+          if (sess.right()) setTimeout(qNext, 900);
+        } else {
+          btn.classList.add('bad');
+          sess.wrong();
+          const sameName = noteAt(qcur.a.string, qcur.a.fret) === noteAt(qcur.b.string, qcur.b.fret);
+          setFb(sameName
+            ? '✘ Non. Les deux pastilles portent le même nom → unisson ou octave : même hauteur = unisson, plus aigu = octave.'
+            : "✘ Non. Les deux noms sont différents → ce n'est ni un unisson ni une octave.", false);
+          setTimeout(() => btn.classList.remove('bad'), 600);
+        }
+      });
+      answers.appendChild(btn);
+    });
+  }
 }
-function qaClick(s, f, x, y, svg) {
-  if (!sa.running() || qaLock) return;
-  const { kind, targetAbs } = qaCur;
-  const fb = document.getElementById('qa-feedback');
+function qClick(s, f, x, y, svg) {
+  if (!sess.running() || qlock || qcur.type !== 'place') return;
+  const { kind, targetAbs } = qcur;
   const svgNS = 'http://www.w3.org/2000/svg';
   const c = document.createElementNS(svgNS, 'circle');
   c.setAttribute('cx', x); c.setAttribute('cy', y); c.setAttribute('r', 12);
@@ -569,127 +628,37 @@ function qaClick(s, f, x, y, svg) {
   const abs = absAt(s, f);
   const note = disp(noteAt(s, f));
   const compact = kind === 'quinte'
-    ? { string: qaCur.s - 1, fret: qaCur.f + 2 }
-    : { string: qaCur.s - 2, fret: qaCur.f + 2 };
+    ? { string: qcur.s - 1, fret: qcur.f + 2 }
+    : { string: qcur.s - 2, fret: qcur.f + 2 };
   if (abs === targetAbs) {
-    qaLock = true;
+    qlock = true;
     c.setAttribute('fill', '#27764b');
     const shape = kind === 'quinte' ? "corde d'à côté, +2 cases" : 'la diagonale 2+2';
     const elsewhere = (s === compact.string && f === compact.fret)
       ? '' : ` (position valable — la forme compacte était ${STRINGS[compact.string].label}-${compact.fret})`;
-    fb.textContent = `✔ ${note}, ${kind === 'quinte' ? 'la quinte' : "l'octave"} — ${shape}.${elsewhere}`;
-    fb.className = 'feedback ok';
-    if (sa.right()) setTimeout(qaNext, 800);
+    setFb(`✔ ${note}, ${kind === 'quinte' ? 'la quinte' : "l'octave"} — ${shape}.${elsewhere}`, true);
+    if (sess.right()) setTimeout(qNext, 900);
   } else {
     c.setAttribute('fill', '#c0392b');
-    sa.wrong();
+    sess.wrong();
     let msg;
-    if (kind === 'quinte' && abs === absAt(qaCur.s, qaCur.f) - 5) {
+    if (kind === 'quinte' && abs === absAt(qcur.s, qcur.f) - 5) {
       msg = `✘ ${note}, c'est la quinte… en dessous (même nom, une octave plus bas). On la demandait vers l'aigu : corde d'à côté, +2 cases.`;
-    } else if (kind === 'octave' && abs === absAt(qaCur.s, qaCur.f)) {
-      msg = `✘ Même hauteur = unisson, pas l'octave. L'octave est plus aiguë : la diagonale +2 cordes, +2 cases.`;
+    } else if (kind === 'octave' && abs === absAt(qcur.s, qcur.f)) {
+      msg = "✘ Même hauteur = unisson, pas l'octave. L'octave est plus aiguë : la diagonale +2 cordes, +2 cases.";
+    } else if (s === compact.string) {
+      msg = `✘ Bonne corde, mais pas la bonne case (${note}). Compte +2 cases par rapport à la fondamentale.`;
     } else {
-      const hint = kind === 'quinte' ? "corde d'à côté (vers l'aigu), 2 cases plus haut." : 'la diagonale : +2 cordes ET +2 cases.';
-      msg = `✘ Ça, c'est ${note} (${STRINGS[s].label}-${f}). Indice : ${hint}`;
+      msg = kind === 'quinte'
+        ? `✘ Ça, c'est ${note} (${STRINGS[s].label}-${f}). La quinte est sur la corde d'à côté (vers l'aigu), 2 cases plus haut.`
+        : `✘ Ça, c'est ${note} (${STRINGS[s].label}-${f}). L'octave est 2 cordes plus haut (vers l'aigu), 2 cases plus haut.`;
     }
-    fb.textContent = msg;
-    fb.className = 'feedback ko';
+    setFb(msg, false);
     setTimeout(() => c.remove(), 900);
   }
 }
 document.getElementById('qa-question').textContent = 'Clique sur « Démarrer la session » quand tu es prêt.';
 drawFretboard('qa-board', {});
-
-// ---------- Quiz 2 : quel intervalle ? ----------
-let qbCur = null, qbLock = false;
-const QB_KINDS = ['unisson', 'quinte', 'octave'];
-const sb = createSession({
-  len: 20, key: 'btb-l2-ident',
-  statusId: 'qb-status', resultId: 'qb-result', startId: 'qb-start',
-  onQuestion: qbNext,
-  onDone: () => {
-    document.getElementById('qb-question').textContent = '🎉 Session terminée !';
-    document.getElementById('qb-answers').innerHTML = '';
-    drawFretboard('qb-board', {});
-  },
-});
-function qbNext() {
-  qbLock = false;
-  const fb = document.getElementById('qb-feedback');
-  fb.textContent = ''; fb.className = 'feedback';
-  const kind = QB_KINDS[Math.floor(Math.random() * 3)];
-  let a, b; // a = position grave, b = position aiguë (ou égale)
-  if (kind === 'unisson') {
-    const s = Math.floor(Math.random() * 3);            // G, D ou A comme corde du haut
-    const f = Math.floor(Math.random() * 8);            // 0..7
-    a = { string: s + 1, fret: f + 5 };
-    b = { string: s, fret: f };
-  } else if (kind === 'quinte') {
-    if (Math.random() < 0.6) {
-      const s = 1 + Math.floor(Math.random() * 3);      // forme compacte
-      const f = Math.floor(Math.random() * 11);
-      a = { string: s, fret: f };
-      b = { string: s - 1, fret: f + 2 };
-    } else {
-      const s = Math.floor(Math.random() * 4);          // même corde, +7
-      const f = Math.floor(Math.random() * 6);
-      a = { string: s, fret: f };
-      b = { string: s, fret: f + 7 };
-    }
-  } else {
-    const v = Math.random();
-    if (v < 0.5) {
-      const s = 2 + Math.floor(Math.random() * 2);      // diagonale 2+2
-      const f = Math.floor(Math.random() * 11);
-      a = { string: s, fret: f };
-      b = { string: s - 2, fret: f + 2 };
-    } else if (v < 0.75) {
-      const s = Math.floor(Math.random() * 4);          // corde à vide → case 12
-      a = { string: s, fret: 0 };
-      b = { string: s, fret: 12 };
-    } else {
-      const s = Math.floor(Math.random() * 3);          // pont de la case 7
-      const f = Math.floor(Math.random() * 6);
-      a = { string: s + 1, fret: f };
-      b = { string: s, fret: f + 7 };
-    }
-  }
-  qbCur = { kind: kind, a: a, b: b };
-  document.getElementById('qb-question').textContent = 'Quel est l’intervalle entre les deux pastilles ?';
-  drawFretboard('qb-board', { dots: [
-    { string: a.string, fret: a.fret, color: '#7a7265', label: disp(noteAt(a.string, a.fret)) },
-    { string: b.string, fret: b.fret, color: '#2c5f8a', label: disp(noteAt(b.string, b.fret)) },
-  ]});
-  const answers = document.getElementById('qb-answers');
-  answers.innerHTML = '';
-  [['unisson', 'Unisson'], ['quinte', 'Quinte'], ['octave', 'Octave']].forEach(([val, lab]) => {
-    const btn = document.createElement('button');
-    btn.textContent = lab;
-    btn.addEventListener('click', () => {
-      if (!sb.running() || qbLock) return;
-      if (val === qbCur.kind) {
-        qbLock = true;
-        btn.classList.add('good');
-        fb.textContent = {
-          unisson: '✔ Unisson — même hauteur exactement : la règle « −5 » de la leçon 1.',
-          quinte: "✔ Quinte — 7 demi-tons : corde d'à côté +2 cases (ou +7 sur la même corde).",
-          octave: '✔ Octave — 12 demi-tons : la diagonale 2+2 (ou case 12, ou le pont de la case 7).',
-        }[val];
-        fb.className = 'feedback ok';
-        if (sb.right()) setTimeout(qbNext, 800);
-      } else {
-        btn.classList.add('bad');
-        sb.wrong();
-        fb.textContent = '✘ Non. Compare : même nom + même hauteur = unisson ; même nom plus aigu = octave ; nom différent = quinte.';
-        fb.className = 'feedback ko';
-        setTimeout(() => btn.classList.remove('bad'), 600);
-      }
-    });
-    answers.appendChild(btn);
-  });
-}
-document.getElementById('qb-question').textContent = 'Clique sur « Démarrer la session » quand tu es prêt.';
-drawFretboard('qb-board', {});
 
 // ---------- Drill basse en main (exercice 4) ----------
 let dTimer = null;
