@@ -30,6 +30,9 @@
   }
   .wrap { max-width: 820px; margin: 0 auto; padding: 2.5rem 1.5rem 5rem; }
   header.lesson-head { border-bottom: 3px solid var(--accent); padding-bottom: 1.2rem; margin-bottom: 2rem; }
+  .home-link { font-size: 0.88rem; margin-bottom: 0.8rem; }
+  .home-link a { color: var(--muted); text-decoration: none; }
+  .home-link a:hover { color: var(--blue); text-decoration: underline; }
   .kicker { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.78rem; color: var(--accent); font-weight: 700; margin-bottom: 0.4rem; }
   h1 { font-family: Georgia, "Times New Roman", serif; font-size: 2.1rem; margin: 0 0 0.5rem; line-height: 1.2; }
   .meta { color: var(--muted); font-size: 0.92rem; }
@@ -69,6 +72,8 @@
   .score { font-size: 0.9rem; color: var(--muted); margin-top: 0.5rem; }
   .bignote { font-family: Georgia, serif; font-size: 4.5rem; font-weight: 700; text-align: center; min-height: 5.5rem; color: var(--blue); }
   .controls { display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap; justify-content: center; }
+  .session-bar { display: flex; gap: 0.9rem; align-items: center; flex-wrap: wrap; margin: 0.4rem 0 0.8rem; }
+  .session-status { font-weight: 700; color: var(--blue); font-variant-numeric: tabular-nums; }
   ul.steps li { margin-bottom: 0.5rem; }
   .repertoire { background: #fbf6ec; border: 1px solid #ecdfc4; border-radius: 10px; padding: 1.2rem 1.4rem; margin: 1.4rem 0; }
   .repertoire .tag { color: #9a6b1f; }
@@ -76,12 +81,23 @@
   a { color: var(--blue); }
   .next { background: var(--card); border: 1px dashed var(--border); border-radius: 10px; padding: 1rem 1.3rem; margin-top: 2rem; }
   @media print { .quiz, .controls, button { display: none !important; } body { font-size: 12pt; } }
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    .wrap { padding: 1.8rem 1rem 4rem; }
+    h1 { font-size: 1.65rem; }
+    h2 { font-size: 1.3rem; }
+    table { display: block; overflow-x: auto; }
+    .card, .quiz, .repertoire, .fretboard-box { padding: 0.9rem 1rem; }
+    .bignote { font-size: 3.2rem; min-height: 4rem; }
+    .answers button, .btn { font-size: 0.95rem; padding: 0.45rem 0.7rem; }
+  }
 </style>
 </head>
 <body>
 <div class="wrap">
 
 <header class="lesson-head">
+  <div class="home-link"><a href="../index.html">← Toutes les leçons</a></div>
   <div class="kicker">Théorie musicale &amp; basse · Module 1 — Socle · Leçon 1</div>
   <h1>La carte du manche : les 12 notes</h1>
   <div class="meta">⏱ 25-30 min · 🎸 basse en main · Prérequis : aucun</div>
@@ -182,46 +198,45 @@
   <p style="margin:0.4rem 0">Joue la forme d'octave (+2 cordes, +2 cases) depuis : F♯ (E-2), A (E-5), C (A-3), D (A-5). À chaque fois : note grave, note aiguë, et dis le nom. C'est le geste de base du funk — tu le retrouveras dans <em>I Wish</em>.</p>
 </div>
 
-<h2>4. Quiz interactifs</h2>
-<p>Objectif : <strong>10 bonnes réponses d'affilée</strong> au quiz 1, puis <strong>8 d'affilée</strong> au quiz 3 (qui vérifie que tu utilises bien les 3 règles du socle, pas du par-cœur). Prends ton temps : pars toujours du phare ou de la règle, jamais du sillet.</p>
-
-<div class="quiz">
-  <h3>Quiz 1 — Nomme cette case</h3>
-  <p class="note-fr" style="margin-top:-0.4rem">Un point apparaît sur le manche. Quelle est cette note ?</p>
-  <div id="q1-board"></div>
-  <div class="quiz-q" id="q1-question"></div>
-  <div class="answers" id="q1-answers"></div>
-  <div class="feedback" id="q1-feedback"></div>
-  <div class="score" id="q1-score">Série : 0 · Record : 0</div>
-</div>
-
-<div class="quiz">
-  <h3>Quiz 2 — Trouve la note sur le manche</h3>
-  <p class="note-fr" style="margin-top:-0.4rem">Je te donne une note, clique une case qui correspond (n'importe quelle corde, cases 0 à 12 — la case 0 est la pastille à gauche du sillet).</p>
-  <div class="quiz-q" id="q2-question"></div>
-  <div id="q2-board"></div>
-  <div class="feedback" id="q2-feedback"></div>
-  <div class="score" id="q2-score">Trouvées : 0</div>
-</div>
-
-<div class="quiz">
-  <h3>Quiz 3 — Le socle en action</h3>
-  <p class="note-fr" style="margin-top:-0.4rem">Chaque question teste une des 3 règles du socle. La pastille grise est ton point de départ : clique la case demandée. L'idée n'est pas de connaître la réponse par cœur, mais d'<em>appliquer la règle</em>.</p>
-  <div class="quiz-q" id="q4-question"></div>
-  <div id="q4-board"></div>
-  <div class="feedback" id="q4-feedback"></div>
-  <div class="score" id="q4-score">Série : 0 · Record : 0 — objectif : 8 d'affilée</div>
-</div>
-
-<div class="quiz">
-  <h3>Quiz 4 — Drill basse en main</h3>
-  <p class="note-fr" style="margin-top:-0.4rem">L'écran te donne une note : trouve-la sur ta vraie basse (au moins 2 positions) avant la suivante. Commence en mode manuel, puis active le mode auto quand tu te sens prêt.</p>
+<div class="card play">
+  <span class="tag">🎸 Exercice 4 — Drill libre (2-3 min)</span>
+  <p style="margin:0.4rem 0">L'écran te donne une note : trouve-la sur ta vraie basse (au moins 2 positions) avant la suivante. Commence en mode manuel, puis active le mode auto quand tu te sens prêt.</p>
   <div class="bignote" id="q3-note">—</div>
   <div class="controls">
     <button class="btn btn-primary" id="q3-next">Note suivante</button>
     <button class="btn" id="q3-auto">▶ Mode auto (10 s)</button>
     <label class="note-fr"><input type="checkbox" id="q3-sharps"> inclure les ♯/♭</label>
   </div>
+</div>
+
+<h2>4. Quiz — deux sessions chronométrées</h2>
+<p>Chaque quiz est une <strong>session de 20 questions chronométrée</strong>. Une erreur ne bloque pas — tu corriges et tu continues — mais elle coûte <strong>+5 s</strong> au score final (score = temps + pénalités). Ton meilleur score est mémorisé par ton navigateur. Objectif en deux temps : d'abord une session <strong>sans erreur</strong>, peu importe le temps ; ensuite, fais baisser le chrono — c'est lui qui transforme la précision en réflexe.</p>
+
+<div class="quiz">
+  <h3>Quiz 1 — La carte du manche</h3>
+  <p class="note-fr" style="margin-top:-0.4rem">Deux types de questions mélangés : « quelle est cette note ? » (réponds avec les boutons) et « clique sur un … » (réponds sur le manche, n'importe quelle position — la case 0 est la pastille à gauche du sillet).</p>
+  <div class="session-bar">
+    <button class="btn btn-primary" id="q1-start">▶ Démarrer la session</button>
+    <span class="session-status" id="q1-status"></span>
+  </div>
+  <div class="quiz-q" id="q1-question"></div>
+  <div id="q1-board"></div>
+  <div class="answers" id="q1-answers"></div>
+  <div class="feedback" id="q1-feedback"></div>
+  <div class="score" id="q1-result"></div>
+</div>
+
+<div class="quiz">
+  <h3>Quiz 2 — Le socle en action</h3>
+  <p class="note-fr" style="margin-top:-0.4rem">Chaque question teste une des 3 règles du socle. La pastille grise est ton point de départ : clique la case demandée. L'idée n'est pas de connaître la réponse par cœur, mais d'<em>appliquer la règle</em> — le chrono te pousse justement à passer par la règle plutôt que par le comptage.</p>
+  <div class="session-bar">
+    <button class="btn btn-primary" id="q4-start">▶ Démarrer la session</button>
+    <span class="session-status" id="q4-status"></span>
+  </div>
+  <div class="quiz-q" id="q4-question"></div>
+  <div id="q4-board"></div>
+  <div class="feedback" id="q4-feedback"></div>
+  <div class="score" id="q4-result"></div>
 </div>
 
 <h2>5. Pour aller plus loin</h2>
@@ -231,12 +246,12 @@
 </ul>
 
 <div class="next">
-  <strong>Prochaine leçon :</strong> les premiers intervalles — l'octave et la quinte, les deux formes que ta main connaît déjà, et pourquoi la quinte est l'arme n°1 du bassiste. On commencera à analyser <em>I Feel Good</em>.
+  <strong>Prochaine leçon :</strong> <a href="0002-octave-et-quinte.html">l'octave et la quinte</a> — les deux formes que ta main connaît déjà, pourquoi la quinte est l'arme n°1 du bassiste, et l'analyse de la ligne de <em>Billie Jean</em>.
 </div>
 
 <footer>
   <p>💬 Une question, un point flou, un exercice trop dur ou trop facile ? Demande à ton agent-prof dans le terminal — il peut t'expliquer autrement, générer d'autres exercices ou adapter la leçon.</p>
-  <p>Références : <a href="../reference/carte-du-manche.html">Carte du manche</a> · Leçon suivante : <em>à venir</em></p>
+  <p><a href="../index.html">← Toutes les leçons</a> · Références : <a href="../reference/carte-du-manche.html">Carte du manche</a> · Leçon suivante : <a href="0002-octave-et-quinte.html">L'octave et la quinte</a></p>
 </footer>
 
 </div>
@@ -407,6 +422,8 @@ function drawFretboard(containerId, opts = {}) {
   }
   const container = document.getElementById(containerId);
   container.innerHTML = '';
+  container.style.overflowX = 'auto';
+  container.style.webkitOverflowScrolling = 'touch';
   container.appendChild(svg);
   return svg;
 }
@@ -428,86 +445,153 @@ drawFretboard('fb-copies', {
   ],
 });
 
-// ---------- Quiz 1 : nomme cette case ----------
-let q1 = { streak: 0, best: 0, current: null, locked: false };
-function q1Next() {
-  q1.locked = false;
-  const s = Math.floor(Math.random() * 4);
-  const f = Math.floor(Math.random() * 13);
-  q1.current = { string: s, fret: f, note: noteAt(s, f) };
-  drawFretboard('q1-board', { dot: { string: s, fret: f } });
-  document.getElementById('q1-question').textContent =
-    `Corde ${STRINGS[s].label}, case ${f} — quelle note ?`;
-  document.getElementById('q1-feedback').textContent = '';
-  document.getElementById('q1-feedback').className = 'feedback';
-  const box = document.getElementById('q1-answers');
-  box.innerHTML = '';
-  NOTES.forEach(n => {
-    const b = document.createElement('button');
-    b.textContent = n.includes('#') ? `${n.replace('#','♯')}/${NOTES[(NOTES.indexOf(n)+1)%12]}♭` : n;
-    b.addEventListener('click', () => q1Answer(n, b));
-    box.appendChild(b);
+// ---------- Sessions chronométrées (20 questions, score = temps + 5 s par erreur) ----------
+const disp = n => n.replace('#', '♯');
+function fmtTime(sec) {
+  const m = Math.floor(sec / 60), s = Math.floor(sec % 60);
+  return `${m}:${String(s).padStart(2, '0')}`;
+}
+function loadBest(key) { try { return JSON.parse(localStorage.getItem(key)); } catch (e) { return null; } }
+function saveBest(key, v) { try { localStorage.setItem(key, JSON.stringify(v)); } catch (e) {} }
+
+function createSession(cfg) {
+  // cfg : { len, key, statusId, resultId, startId, onQuestion, onDone }
+  const st = { i: 0, err: 0, t0: 0, on: false, int: null };
+  const statusEl = document.getElementById(cfg.statusId);
+  const resultEl = document.getElementById(cfg.resultId);
+  const btn = document.getElementById(cfg.startId);
+  function tick() {
+    const el = (performance.now() - st.t0) / 1000;
+    statusEl.textContent = `Question ${Math.min(st.i + 1, cfg.len)}/${cfg.len} · ⏱ ${fmtTime(el)} · ✘ ${st.err}`;
+  }
+  btn.addEventListener('click', () => {
+    st.i = 0; st.err = 0; st.t0 = performance.now(); st.on = true;
+    resultEl.innerHTML = '';
+    btn.textContent = '↻ Recommencer';
+    clearInterval(st.int);
+    st.int = setInterval(tick, 250);
+    tick();
+    cfg.onQuestion();
   });
+  return {
+    running: () => st.on,
+    wrong() { if (st.on) { st.err++; tick(); } },
+    right() {
+      if (!st.on) return false;
+      st.i++;
+      if (st.i < cfg.len) { tick(); return true; }
+      st.on = false;
+      clearInterval(st.int);
+      const elapsed = (performance.now() - st.t0) / 1000;
+      const score = elapsed + 5 * st.err;
+      const best = loadBest(cfg.key);
+      let extra;
+      if (!best || score < best.score) {
+        saveBest(cfg.key, { score: score, time: elapsed, errors: st.err });
+        extra = best ? ` · 🏆 record battu (ancien : ${fmtTime(best.score)}) !` : ' · 🏆 premier score enregistré !';
+      } else {
+        extra = ` · meilleur : ${fmtTime(best.score)}`;
+      }
+      const errTxt = st.err === 0 ? 'sans erreur' : `${st.err} erreur${st.err > 1 ? 's' : ''} (+${st.err * 5} s)`;
+      resultEl.innerHTML = `✅ 20/20 — temps ${fmtTime(elapsed)}, ${errTxt} → <strong>score ${fmtTime(score)}</strong>${extra}`;
+      statusEl.textContent = '';
+      if (cfg.onDone) cfg.onDone();
+      return false;
+    },
+  };
 }
-function q1Answer(n, btn) {
-  if (q1.locked) return;
+
+// ---------- Quiz 1 : la carte du manche (nomme / trouve, mélangés) ----------
+let q1cur = null, q1lock = false;
+const s1 = createSession({
+  len: 20, key: 'btb-l1-carte',
+  statusId: 'q1-status', resultId: 'q1-result', startId: 'q1-start',
+  onQuestion: q1Next,
+  onDone: () => {
+    document.getElementById('q1-question').textContent = '🎉 Session terminée !';
+    document.getElementById('q1-answers').innerHTML = '';
+    drawFretboard('q1-board', {});
+  },
+});
+function q1Next() {
+  q1lock = false;
   const fb = document.getElementById('q1-feedback');
-  if (n === q1.current.note) {
-    q1.locked = true;
-    btn.classList.add('good');
-    q1.streak++;
-    q1.best = Math.max(q1.best, q1.streak);
-    fb.textContent = q1.streak >= 10 ? `✔ ${n.replace('#','♯')} — 🎉 10 d'affilée, objectif atteint !` : `✔ Oui, ${n.replace('#','♯')} !`;
-    fb.className = 'feedback ok';
-    setTimeout(q1Next, 900);
+  fb.textContent = ''; fb.className = 'feedback';
+  const answers = document.getElementById('q1-answers');
+  answers.innerHTML = '';
+  if (Math.random() < 0.5) {
+    // « nomme cette case » : répondre avec les boutons
+    const s = Math.floor(Math.random() * 4);
+    const f = Math.floor(Math.random() * 13);
+    q1cur = { mode: 'name', note: noteAt(s, f) };
+    drawFretboard('q1-board', { dot: { string: s, fret: f } });
+    document.getElementById('q1-question').textContent = `Corde ${STRINGS[s].label}, case ${f} — quelle note ?`;
+    NOTES.forEach(n => {
+      const b = document.createElement('button');
+      b.textContent = n.includes('#') ? `${disp(n)}/${NOTES[(NOTES.indexOf(n) + 1) % 12]}♭` : n;
+      b.addEventListener('click', () => {
+        if (!s1.running() || q1lock) return;
+        if (n === q1cur.note) {
+          q1lock = true;
+          b.classList.add('good');
+          fb.textContent = `✔ Oui, ${disp(n)} !`;
+          fb.className = 'feedback ok';
+          if (s1.right()) setTimeout(q1Next, 600);
+        } else {
+          b.classList.add('bad');
+          s1.wrong();
+          fb.textContent = '✘ Non — indice : pars de la case marquée la plus proche.';
+          fb.className = 'feedback ko';
+          setTimeout(() => b.classList.remove('bad'), 600);
+        }
+      });
+      answers.appendChild(b);
+    });
   } else {
-    btn.classList.add('bad');
-    q1.streak = 0;
-    fb.textContent = '✘ Non — indice : pars de la case marquée la plus proche.';
-    fb.className = 'feedback ko';
-    setTimeout(() => btn.classList.remove('bad'), 600);
-  }
-  document.getElementById('q1-score').textContent = `Série : ${q1.streak} · Record : ${q1.best}`;
-}
-q1Next();
-
-// ---------- Quiz 2 : trouve la note ----------
-let q2 = { target: null, found: 0 };
-function q2Next() {
-  q2.target = NOTES[Math.floor(Math.random() * 12)];
-  document.getElementById('q2-question').textContent =
-    `Clique sur un ${q2.target.replace('#','♯')}${q2.target.includes('#') ? ' (= ' + NOTES[(NOTES.indexOf(q2.target)+1)%12] + '♭)' : ''}`;
-  drawFretboard('q2-board', { clickable: true, onCellClick: q2Click });
-  document.getElementById('q2-feedback').textContent = '';
-  document.getElementById('q2-feedback').className = 'feedback';
-}
-function q2Click(s, f, x, y, svg) {
-  const n = noteAt(s, f);
-  const fb = document.getElementById('q2-feedback');
-  const svgNS = 'http://www.w3.org/2000/svg';
-  const c = document.createElementNS(svgNS, 'circle');
-  c.setAttribute('cx', x); c.setAttribute('cy', y); c.setAttribute('r', 12);
-  svg.appendChild(c);
-  if (n === q2.target) {
-    c.setAttribute('fill', '#27764b');
-    q2.found++;
-    fb.textContent = `✔ ${n.replace('#','♯')} — corde ${STRINGS[s].label}, case ${f}. Bien vu !`;
-    fb.className = 'feedback ok';
-    document.getElementById('q2-score').textContent = `Trouvées : ${q2.found}`;
-    setTimeout(q2Next, 1100);
-  } else {
-    c.setAttribute('fill', '#c0392b');
-    fb.textContent = `✘ Ça, c'est un ${n.replace('#','♯')}. Cherche encore.`;
-    fb.className = 'feedback ko';
-    setTimeout(() => c.remove(), 800);
+    // « trouve la note » : répondre sur le manche
+    const target = NOTES[Math.floor(Math.random() * 12)];
+    q1cur = { mode: 'find', target: target };
+    document.getElementById('q1-question').textContent =
+      `Clique sur un ${disp(target)}${target.includes('#') ? ' (= ' + NOTES[(NOTES.indexOf(target) + 1) % 12] + '♭)' : ''}`;
+    drawFretboard('q1-board', { clickable: true, onCellClick: (s, f, x, y, svg) => {
+      if (!s1.running() || q1lock || q1cur.mode !== 'find') return;
+      const n = noteAt(s, f);
+      const svgNS = 'http://www.w3.org/2000/svg';
+      const c = document.createElementNS(svgNS, 'circle');
+      c.setAttribute('cx', x); c.setAttribute('cy', y); c.setAttribute('r', 12);
+      svg.appendChild(c);
+      if (n === target) {
+        q1lock = true;
+        c.setAttribute('fill', '#27764b');
+        fb.textContent = `✔ ${disp(n)} — corde ${STRINGS[s].label}, case ${f}.`;
+        fb.className = 'feedback ok';
+        if (s1.right()) setTimeout(q1Next, 600);
+      } else {
+        c.setAttribute('fill', '#c0392b');
+        s1.wrong();
+        fb.textContent = `✘ Ça, c'est un ${disp(n)}. Cherche encore.`;
+        fb.className = 'feedback ko';
+        setTimeout(() => c.remove(), 700);
+      }
+    }});
   }
 }
-q2Next();
+document.getElementById('q1-question').textContent = 'Clique sur « Démarrer la session » quand tu es prêt.';
+drawFretboard('q1-board', {});
 
-// ---------- Quiz "socle en action" (3 règles) ----------
-let q4 = { streak: 0, best: 0, current: null, locked: false };
+// ---------- Quiz 2 : le socle en action (3 règles) ----------
+let q4cur = null, q4lock = false;
+const s4 = createSession({
+  len: 20, key: 'btb-l1-socle',
+  statusId: 'q4-status', resultId: 'q4-result', startId: 'q4-start',
+  onQuestion: q4Next,
+  onDone: () => {
+    document.getElementById('q4-question').textContent = '🎉 Session terminée !';
+    drawFretboard('q4-board', {});
+  },
+});
 function q4Next() {
-  q4.locked = false;
+  q4lock = false;
   const type = ['copie', 'octave', 'unisson'][Math.floor(Math.random() * 3)];
   let src, tgt, prompt;
   if (type === 'copie') {
@@ -529,10 +613,10 @@ function q4Next() {
     tgt = { string: sIdx - 1, fret: f - 5 };
     prompt = `Unisson « −5 » — la même note exactement que ${STRINGS[sIdx].label}-${f}, sur la corde ${STRINGS[tgt.string].label} ?`;
   }
-  q4.current = { type, src, tgt };
+  q4cur = { type: type, src: src, tgt: tgt };
   document.getElementById('q4-question').textContent = prompt;
   drawFretboard('q4-board', {
-    dots: [{ ...src, color: '#7a7265', label: noteAt(src.string, src.fret).replace('#', '♯') }],
+    dots: [{ ...src, color: '#7a7265', label: disp(noteAt(src.string, src.fret)) }],
     clickable: true,
     onCellClick: q4Click,
   });
@@ -540,30 +624,28 @@ function q4Next() {
   document.getElementById('q4-feedback').className = 'feedback';
 }
 function q4Click(s, f, x, y, svg) {
-  if (q4.locked) return;
-  const { type, src, tgt } = q4.current;
+  if (!s4.running() || q4lock) return;
+  const { type, src, tgt } = q4cur;
   const fb = document.getElementById('q4-feedback');
   const svgNS = 'http://www.w3.org/2000/svg';
   const c = document.createElementNS(svgNS, 'circle');
   c.setAttribute('cx', x); c.setAttribute('cy', y); c.setAttribute('r', 12);
   svg.appendChild(c);
-  const note = noteAt(s, f).replace('#', '♯');
+  const note = disp(noteAt(s, f));
   if (s === tgt.string && f === tgt.fret) {
-    q4.locked = true;
+    q4lock = true;
     c.setAttribute('fill', '#27764b');
-    q4.streak++;
-    q4.best = Math.max(q4.best, q4.streak);
     const explain = {
       copie: `✔ ${STRINGS[s].label}-${f} = ${note}, même nom que ${STRINGS[src.string].label}-${src.fret} : la corde ${STRINGS[src.string].label} est la copie de ${STRINGS[s].label} décalée de 2 cases.`,
       octave: `✔ ${note} à l'octave : +2 cordes, +2 cases.`,
       unisson: `✔ Même hauteur exactement : ${STRINGS[src.string].label}-${src.fret} = ${STRINGS[s].label}-${f} (${note}).`,
     }[type];
-    fb.textContent = q4.streak >= 8 ? `${explain} 🎉 8 d'affilée, le socle est en place !` : explain;
+    fb.textContent = explain;
     fb.className = 'feedback ok';
-    setTimeout(q4Next, 1400);
+    if (s4.right()) setTimeout(q4Next, 900);
   } else {
     c.setAttribute('fill', '#c0392b');
-    q4.streak = 0;
+    s4.wrong();
     const hint = {
       copie: 'recule de 2 cases en sautant 2 cordes.',
       octave: 'la diagonale : +2 cordes ET +2 cases.',
@@ -573,11 +655,11 @@ function q4Click(s, f, x, y, svg) {
     fb.className = 'feedback ko';
     setTimeout(() => c.remove(), 900);
   }
-  document.getElementById('q4-score').textContent = `Série : ${q4.streak} · Record : ${q4.best} — objectif : 8 d'affilée`;
 }
-q4Next();
+document.getElementById('q4-question').textContent = 'Clique sur « Démarrer la session » quand tu es prêt.';
+drawFretboard('q4-board', {});
 
-// ---------- Quiz 3 : drill basse en main ----------
+// ---------- Drill basse en main (exercice 4) ----------
 let q3timer = null;
 function q3Pick() {
   const pool = document.getElementById('q3-sharps').checked ? NOTES : NATURALS;

@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leçon 2 — L'octave et la quinte : tes deux premières formes</title>
+<style>
+  :root {
+    --bg: #faf8f4;
+    --ink: #2b2620;
+    --muted: #7a7265;
+    --accent: #c0392b;
+    --accent-soft: #fdf0ee;
+    --green: #27764b;
+    --green-soft: #eaf5ef;
+    --blue: #2c5f8a;
+    --blue-soft: #edf3f8;
+    --card: #ffffff;
+    --border: #e6e0d6;
+    --wood: #f3e9d8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Avenir Next", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.65;
+    font-size: 17px;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 2.5rem 1.5rem 5rem; }
+  header.lesson-head { border-bottom: 3px solid var(--accent); padding-bottom: 1.2rem; margin-bottom: 2rem; }
+  .home-link { font-size: 0.88rem; margin-bottom: 0.8rem; }
+  .home-link a { color: var(--muted); text-decoration: none; }
+  .home-link a:hover { color: var(--blue); text-decoration: underline; }
+  .kicker { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.78rem; color: var(--accent); font-weight: 700; margin-bottom: 0.4rem; }
+  h1 { font-family: Georgia, "Times New Roman", serif; font-size: 2.1rem; margin: 0 0 0.5rem; line-height: 1.2; }
+  .meta { color: var(--muted); font-size: 0.92rem; }
+  h2 { font-family: Georgia, serif; font-size: 1.45rem; margin-top: 2.8rem; border-left: 4px solid var(--accent); padding-left: 0.7rem; }
+  h3 { font-size: 1.08rem; margin-top: 1.8rem; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem 1.4rem; margin: 1.2rem 0; }
+  .objective { background: var(--accent-soft); border-color: #f0d5d0; }
+  .play { background: var(--green-soft); border-color: #cde5d6; }
+  .play h3, .play .tag { color: var(--green); }
+  .tag { display: inline-block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.3rem; }
+  .objective .tag { color: var(--accent); }
+  .note-fr { color: var(--muted); font-size: 0.92rem; }
+  code, .mono { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.9em; background: #f1ece3; padding: 0.1em 0.35em; border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.95rem; }
+  th, td { border: 1px solid var(--border); padding: 0.45rem 0.7rem; text-align: center; }
+  th { background: #f4efe6; }
+  .fretboard-box { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; margin: 1.2rem 0; overflow-x: auto; }
+  svg text { font-family: "Avenir Next", system-ui, sans-serif; }
+  pre.tab { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.82rem; line-height: 1.5; background: #f6f1e7; border: 1px solid var(--border); border-radius: 8px; padding: 0.9rem 1rem; overflow-x: auto; margin: 1rem 0 0.4rem; }
+  .quiz { background: var(--blue-soft); border: 1px solid #cfdeea; border-radius: 10px; padding: 1.3rem 1.4rem; margin: 1.4rem 0; }
+  .quiz h3 { color: var(--blue); margin-top: 0; }
+  .quiz-q { font-size: 1.15rem; font-weight: 600; margin: 0.6rem 0; min-height: 1.8em; }
+  .answers { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0.8rem 0; }
+  .answers button, .btn {
+    font-size: 1rem; padding: 0.5rem 0.95rem; border-radius: 8px; border: 1px solid var(--border);
+    background: white; cursor: pointer; font-weight: 600; color: var(--ink);
+    transition: transform 0.06s ease, background 0.15s ease;
+  }
+  .answers button:hover, .btn:hover { background: #f6f2ea; }
+  .answers button:active { transform: scale(0.96); }
+  .answers button.good { background: var(--green); color: white; border-color: var(--green); }
+  .answers button.bad { background: var(--accent); color: white; border-color: var(--accent); }
+  .btn-primary { background: var(--blue); color: white; border-color: var(--blue); }
+  .btn-primary:hover { background: #234b6d; }
+  .feedback { min-height: 1.6em; font-weight: 600; margin-top: 0.4rem; }
+  .feedback.ok { color: var(--green); }
+  .feedback.ko { color: var(--accent); }
+  .score { font-size: 0.9rem; color: var(--muted); margin-top: 0.5rem; }
+  .bignote { font-family: Georgia, serif; font-size: 4.5rem; font-weight: 700; text-align: center; min-height: 5.5rem; color: var(--blue); }
+  .controls { display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap; justify-content: center; }
+  .session-bar { display: flex; gap: 0.9rem; align-items: center; flex-wrap: wrap; margin: 0.4rem 0 0.8rem; }
+  .session-status { font-weight: 700; color: var(--blue); font-variant-numeric: tabular-nums; }
+  ul.steps li { margin-bottom: 0.5rem; }
+  .repertoire { background: #fbf6ec; border: 1px solid #ecdfc4; border-radius: 10px; padding: 1.2rem 1.4rem; margin: 1.4rem 0; }
+  .repertoire .tag { color: #9a6b1f; }
+  footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.92rem; }
+  a { color: var(--blue); }
+  .next { background: var(--card); border: 1px dashed var(--border); border-radius: 10px; padding: 1rem 1.3rem; margin-top: 2rem; }
+  @media print { .quiz, .controls, button { display: none !important; } body { font-size: 12pt; } }
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    .wrap { padding: 1.8rem 1rem 4rem; }
+    h1 { font-size: 1.65rem; }
+    h2 { font-size: 1.3rem; }
+    table { display: block; overflow-x: auto; }
+    .card, .quiz, .repertoire, .fretboard-box { padding: 0.9rem 1rem; }
+    .bignote { font-size: 3.2rem; min-height: 4rem; }
+    .answers button, .btn { font-size: 0.95rem; padding: 0.45rem 0.7rem; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="lesson-head">
+  <div class="home-link"><a href="../index.html">← Toutes les leçons</a></div>
+  <div class="kicker">Théorie musicale &amp; basse · Module 1 — Socle · Leçon 2</div>
+  <h1>L'octave et la quinte : tes deux premières formes</h1>
+  <div class="meta">⏱ 25-30 min · 🎸 basse en main · Prérequis : <a href="0001-la-carte-du-manche.html">leçon 1 — la carte du manche</a></div>
+</header>
+
+<div class="card objective">
+  <span class="tag">Objectif de la leçon</span>
+  <p style="margin:0.3rem 0 0">À la fin de cette session, tu sauras placer <strong>la quinte et l'octave depuis n'importe quelle fondamentale</strong>, instantanément — parce que ce sont des <em>formes géométriques fixes</em>, pas des calculs. Et tu auras analysé ta première vraie ligne : <em>Billie Jean</em>, qui tient presque entièrement sur ces deux intervalles.</p>
+</div>
+
+<h2>1. Un intervalle, c'est une distance</h2>
+<p>Un <strong>intervalle</strong> (EN : <em>interval</em>) est la distance entre deux notes, mesurée en <strong>demi-tons</strong>. Et comme tu le sais depuis la leçon 1 : 1 demi-ton = 1 case. Donc sur la basse, <strong>un intervalle = un nombre de cases</strong> — et mieux encore, <strong>une forme géométrique</strong> : le même intervalle a toujours le même dessin sur le manche, où que tu sois. Tu l'apprends une fois, tu l'as dans toutes les tonalités.</p>
+<p>C'est LE concept central de toute la théorie : les gammes sont des suites d'intervalles, les accords des empilements d'intervalles. On les découvrira un par un — aujourd'hui, les deux qui font tourner l'essentiel des lignes de basse :</p>
+
+<table>
+  <tr><th>Intervalle</th><th>EN</th><th>Demi-tons</th><th>Forme sur le manche</th></tr>
+  <tr><td><strong>Unisson</strong></td><td>unison</td><td>0</td><td>Corde du dessus, 5 cases plus bas (la règle « −5 » de la leçon 1)</td></tr>
+  <tr><td><strong>Quinte juste</strong></td><td>perfect fifth</td><td>7</td><td><strong>Corde d'à côté (vers l'aigu), +2 cases</strong></td></tr>
+  <tr><td><strong>Octave</strong></td><td>octave</td><td>12</td><td><strong>+2 cordes, +2 cases</strong> (le « 2+2 » de la leçon 1)</td></tr>
+</table>
+
+<p class="note-fr">Surprise : tu en connaissais déjà deux. L'unisson « −5 » et l'octave « 2+2 » de la leçon 1 étaient des intervalles déguisés en règles de navigation. Aujourd'hui on leur donne leur vrai nom, et on ajoute le plus important de tous pour un bassiste : la quinte.</p>
+
+<h2>2. L'octave : tu la connais déjà</h2>
+<p><strong>12 demi-tons.</strong> Même nom de note, fréquence doublée : l'oreille entend « la même note, en plus aigu ». Sur le manche, c'est la diagonale <strong>2+2</strong> que tes doigts connaissent — le saut d'octave de <em>I Wish</em> et le moteur de tout le jeu disco/funk.</p>
+
+<div class="fretboard-box">
+  <div id="fb-octave"></div>
+  <p class="note-fr" style="margin-bottom:0">Deux octaves : D (corde A, case 5) → D (corde G, case 7) en bleu ; F♯ (E-2) → F♯ (D-4) en rouge. Toujours la même diagonale. Autre position à connaître : la case 12 = la corde à vide à l'octave.</p>
+</div>
+
+<h2>3. La quinte : l'arme n°1 du bassiste</h2>
+<p><strong>7 demi-tons.</strong> La forme : <strong>corde d'à côté (vers l'aigu), 2 cases plus haut</strong>. Depuis D (corde A, case 5), la quinte est A (corde D, case 7). C'est le son des <em>power chords</em> du rock — fondamentale + quinte, le son « puissant ».</p>
+<p>Pourquoi « l'arme n°1 » ? Parce que la quinte est <strong>neutre</strong> : elle sonne juste sur un accord majeur <em>et</em> sur un accord mineur. Quand tu ne sais pas quoi jouer sur un accord, <strong>fondamentale + quinte est presque toujours un choix sûr</strong>. C'est le filet de sécurité du bassiste — la moitié du country, du reggae et du rock tient là-dessus.</p>
+<p>Et il y a un bonus géométrique : <strong>la quinte en dessous</strong> = <em>même case, corde d'à côté vers le grave</em>. C'est la même note que la quinte du dessus, une octave plus bas (depuis D en A-5 : A en E-5). L'alternance fondamentale / quinte-en-dessous, c'est la « pompe » country-reggae.</p>
+
+<div class="fretboard-box">
+  <div id="fb-quinte"></div>
+  <p class="note-fr" style="margin-bottom:0">Depuis D (bleu) : la quinte au-dessus A (vert, corde d'à côté +2 cases) et la quinte en dessous A (ocre, même case corde du grave). Même note A, à une octave d'écart.</p>
+</div>
+
+<h2>4. Le triangle du bassiste</h2>
+<p>Assemble les deux : <strong>fondamentale + quinte + octave = un triangle</strong>. Une seule forme, déplaçable partout, qui ne change jamais. Des milliers de lignes de basse n'utilisent rien d'autre (plus quelques notes de passage). C'est le premier « mot » complet de ton vocabulaire.</p>
+
+<div class="fretboard-box">
+  <div id="fb-triangle"></div>
+  <p class="note-fr" style="margin-bottom:0">Le triangle posé sur F♯ (celui de <em>Billie Jean</em>) : fondamentale F♯ (E-2), quinte C♯ (A-4), octave F♯ (D-4). Remarque : l'octave est <em>sur la même case</em> que la quinte, une corde plus haut.</p>
+</div>
+
+<div class="repertoire">
+  <span class="tag">Dans ton répertoire</span>
+  <p style="margin:0.3rem 0 0">Le même triangle, posé sur les fondamentales que tu connais déjà :</p>
+  <ul style="margin-bottom:0">
+    <li><strong>I Feel Good</strong> — triangle sur D : <span class="mono">A-5 · D-7 · G-7</span></li>
+    <li><strong>Billie Jean</strong> — triangle sur F♯ : <span class="mono">E-2 · A-4 · D-4</span></li>
+    <li><strong>Do I Wanna Know?</strong> — triangle sur G : <span class="mono">E-3 · A-5 · D-5</span></li>
+    <li><strong>Time Is Running Out</strong> — triangle sur A : <span class="mono">E-5 · A-7 · D-7</span> (ou depuis la corde A à vide)</li>
+  </ul>
+</div>
+
+<h2>5. Analyse — la ligne de <em>Billie Jean</em></h2>
+<p>La ligne du couplet, 8 croches qui tournent en boucle. Joue-la lentement et regarde ce qu'elle contient vraiment :</p>
+
+<pre class="tab">      F♯    C♯    E     F♯    E     C♯    B     C♯
+G ||————————————————————————————————————————————————||
+D ||——————————————2—————4—————2—————————————————————||
+A ||————————4———————————————————————4—————2—————4———||
+E ||——2—————————————————————————————————————————————||
+      F     Q     •     O     •     Q     •     Q</pre>
+<p class="note-fr" style="margin-top:0">F = fondamentale · Q = quinte · O = octave · • = note de passage</p>
+
+<div class="fretboard-box">
+  <div id="fb-bj"></div>
+  <p class="note-fr" style="margin-bottom:0">En bleu : fondamentale et octave (F♯). En vert : la quinte (C♯). En gris : les deux notes de passage (E et B).</p>
+</div>
+
+<p>Compte : <strong>5 notes sur 8 sont le triangle</strong> (la fondamentale, l'octave, et la quinte jouée trois fois). Les trois autres (E, E, B) sont des <strong>notes de passage</strong> (EN : <em>passing notes</em>) qui relient les sommets du triangle et donnent le mouvement. C'est pour ça que la ligne « tourne » toute seule : l'oreille entend une armature ultra-solide — fondamentale, quinte, octave — et le reste glisse entre les deux. Ces notes de passage ont aussi des noms d'intervalles ; on les nommera quand on aura la gamme mineure en main.</p>
+<p class="note-fr">Et <em>I Feel Good</em> ? Le riff de James Brown est bâti sur la même logique, mais il lui faut un intervalle qu'on n'a pas encore : la <strong>tierce</strong>. On l'analysera en entier à la leçon sur les arpèges — patience, il arrive.</p>
+
+<h2>6. Basse en main — exercices (10 min)</h2>
+
+<div class="card play">
+  <span class="tag">🎸 Exercice 1 — Le triangle partout (4 min)</span>
+  <p style="margin:0.4rem 0">Joue <strong>fondamentale → quinte → octave → quinte → fondamentale</strong>, lentement, en disant les noms des notes à voix haute, depuis : D (A-5), F♯ (E-2), G (E-3), A (E-5), C (A-3). Le geste est <em>exactement le même</em> à chaque fois — c'est ça, l'intérêt : un seul doigté pour toutes les tonalités.</p>
+</div>
+
+<div class="card play">
+  <span class="tag">🎸 Exercice 2 — La pompe (3 min)</span>
+  <p style="margin:0.4rem 0">Alterne <strong>fondamentale / quinte en dessous</strong> (même case, corde du grave) en noires régulières, façon country-reggae : D (A-5) ↔ A (E-5), puis C (A-3) ↔ G (E-3). Métronome ou pied qui tape, son régulier.</p>
+</div>
+
+<div class="card play">
+  <span class="tag">🎸 Exercice 3 — Billie Jean décodée (5 min)</span>
+  <p style="margin:0.4rem 0">Joue la ligne de <em>Billie Jean</em> lentement en disant <strong>le rôle</strong> de chaque note : « fondamentale, quinte, passage, octave, passage, quinte, passage, quinte ». Le but n'est pas la vitesse : c'est d'<em>entendre</em> le triangle à l'intérieur de la vraie ligne. Tu ne joueras plus jamais ce morceau de la même façon.</p>
+</div>
+
+<div class="card play">
+  <span class="tag">🎸 Exercice 4 — Drill libre (2-3 min)</span>
+  <p style="margin:0.4rem 0">Une fondamentale s'affiche : joue le triangle (fondamentale-quinte-octave) à partir d'elle, n'importe où sur le manche, avant la suivante.</p>
+  <div class="bignote" id="d-note">—</div>
+  <div class="controls">
+    <button class="btn btn-primary" id="d-next">Note suivante</button>
+    <button class="btn" id="d-auto">▶ Mode auto (15 s)</button>
+    <label class="note-fr"><input type="checkbox" id="d-sharps"> inclure les ♯/♭</label>
+  </div>
+</div>
+
+<h2>7. Quiz — deux sessions chronométrées</h2>
+<p>Même format que la leçon 1 : <strong>20 questions chronométrées</strong>, une erreur coûte <strong>+5 s</strong> (score = temps + pénalités), meilleur score mémorisé par ton navigateur. D'abord sans erreur, ensuite fais baisser le chrono.</p>
+
+<div class="quiz">
+  <h3>Quiz 1 — Place l'intervalle</h3>
+  <p class="note-fr" style="margin-top:-0.4rem">La pastille grise est la fondamentale : clique la quinte ou l'octave demandée, <em>vers l'aigu</em>. Toute position juste est acceptée — mais la forme compacte est la plus rapide, et le chrono le sait.</p>
+  <div class="session-bar">
+    <button class="btn btn-primary" id="qa-start">▶ Démarrer la session</button>
+    <span class="session-status" id="qa-status"></span>
+  </div>
+  <div class="quiz-q" id="qa-question"></div>
+  <div id="qa-board"></div>
+  <div class="feedback" id="qa-feedback"></div>
+  <div class="score" id="qa-result"></div>
+</div>
+
+<div class="quiz">
+  <h3>Quiz 2 — Quel intervalle ?</h3>
+  <p class="note-fr" style="margin-top:-0.4rem">Deux pastilles sur le manche : quel intervalle les sépare ? Astuce : même nom + même hauteur = unisson ; même nom mais plus aigu = octave ; nom différent = quinte.</p>
+  <div class="session-bar">
+    <button class="btn btn-primary" id="qb-start">▶ Démarrer la session</button>
+    <span class="session-status" id="qb-status"></span>
+  </div>
+  <div class="quiz-q" id="qb-question"></div>
+  <div id="qb-board"></div>
+  <div class="answers" id="qb-answers"></div>
+  <div class="feedback" id="qb-feedback"></div>
+  <div class="score" id="qb-result"></div>
+</div>
+
+<h2>8. Pour aller plus loin</h2>
+<ul>
+  <li><a href="../reference/intervalles.html">Référence « Intervalles »</a> — la fiche compacte de cette leçon, imprimable, qui grandira avec les prochains intervalles.</li>
+  <li><a href="https://www.musictheory.net/lessons">musictheory.net</a> — la leçon « Generic Intervals / Specific Intervals » pour le versant théorie pure (gratuit, en anglais).</li>
+  <li><a href="https://www.teoria.com/en/exercises/">Teoria — exercices d'oreille</a> — entraîne-toi à <em>reconnaître à l'oreille</em> quinte et octave : c'est le même triangle, version oreille.</li>
+  <li><a href="https://www.studybass.com/lessons/">StudyBass</a> — le bloc « Intervals » du Study Guide pour une seconde explication, orientée basse (en anglais).</li>
+</ul>
+
+<div class="next">
+  <strong>Prochaine leçon :</strong> la gamme majeure sur le manche — d'où viennent les noms des intervalles (quinte = 5<sup>e</sup> degré…), la première forme à un doigté, et le début de l'analyse de <em>I Feel Good</em>.
+</div>
+
+<footer>
+  <p>💬 Une question, un point flou, un exercice trop dur ou trop facile ? Demande à ton agent-prof dans le terminal — il peut t'expliquer autrement, générer d'autres exercices ou adapter la leçon.</p>
+  <p><a href="../index.html">← Toutes les leçons</a> · Références : <a href="../reference/intervalles.html">Intervalles</a> · <a href="../reference/carte-du-manche.html">Carte du manche</a> · Leçon précédente : <a href="0001-la-carte-du-manche.html">La carte du manche</a></p>
+</footer>
+
+</div>
+
+<script>
+const NOTES = ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
+const NATURALS = ['C','D','E','F','G','A','B'];
+// Cordes affichées de haut (G aigu) en bas (E grave), pitch class de la corde à vide
+const STRINGS = [
+  {label:'G', open:7},
+  {label:'D', open:2},
+  {label:'A', open:9},
+  {label:'E', open:4},
+];
+const OPEN_ABS = [15, 10, 5, 0]; // hauteur absolue (demi-tons au-dessus du E grave) des cordes à vide
+const FRETS = 12;
+const noteAt = (s, f) => NOTES[(STRINGS[s].open + f) % 12];
+const absAt = (s, f) => OPEN_ABS[s] + f;
+const isNatural = n => !n.includes('#');
+const disp = n => n.replace('#', '♯');
+
+// ---------- Rendu du manche en SVG ----------
+function drawFretboard(containerId, opts = {}) {
+  const { showNames = false, dot = null, clickable = false, onCellClick = null } = opts;
+  const W = 760, H = 170, left = 50, top = 18, right = 10;
+  const fw = (W - left - right) / FRETS;
+  const sh = (H - top - 24) / (STRINGS.length - 1);
+  const svgNS = 'http://www.w3.org/2000/svg';
+  const svg = document.createElementNS(svgNS, 'svg');
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  svg.style.width = '100%';
+  svg.style.minWidth = '640px';
+
+  const rect = document.createElementNS(svgNS, 'rect');
+  rect.setAttribute('x', left); rect.setAttribute('y', top - 10);
+  rect.setAttribute('width', W - left - right); rect.setAttribute('height', sh * 3 + 20);
+  rect.setAttribute('fill', '#f3e9d8'); rect.setAttribute('rx', 4);
+  svg.appendChild(rect);
+
+  // Frettes
+  for (let f = 0; f <= FRETS; f++) {
+    const x = left + f * fw;
+    const line = document.createElementNS(svgNS, 'line');
+    line.setAttribute('x1', x); line.setAttribute('x2', x);
+    line.setAttribute('y1', top - 10); line.setAttribute('y2', top + sh * 3 + 10);
+    line.setAttribute('stroke', f === 0 ? '#2b2620' : '#b8a98e');
+    line.setAttribute('stroke-width', f === 0 ? 6 : 2);
+    svg.appendChild(line);
+  }
+  // Repères (3,5,7,9 simple ; 12 double)
+  [3,5,7,9,12].forEach(f => {
+    const x = left + (f - 0.5) * fw;
+    const ys = f === 12 ? [top + sh * 0.5, top + sh * 2.5] : [top + sh * 1.5];
+    ys.forEach(y => {
+      const c = document.createElementNS(svgNS, 'circle');
+      c.setAttribute('cx', x); c.setAttribute('cy', y); c.setAttribute('r', 7);
+      c.setAttribute('fill', '#d9cbb0');
+      svg.appendChild(c);
+    });
+    const t = document.createElementNS(svgNS, 'text');
+    t.setAttribute('x', x); t.setAttribute('y', H - 4);
+    t.setAttribute('text-anchor', 'middle'); t.setAttribute('font-size', '12');
+    t.setAttribute('fill', '#7a7265');
+    t.textContent = f;
+    svg.appendChild(t);
+  });
+  // Cordes + labels
+  STRINGS.forEach((s, i) => {
+    const y = top + i * sh;
+    const line = document.createElementNS(svgNS, 'line');
+    line.setAttribute('x1', left); line.setAttribute('x2', W - right);
+    line.setAttribute('y1', y); line.setAttribute('y2', y);
+    line.setAttribute('stroke', '#5a5247');
+    line.setAttribute('stroke-width', 1.5 + i * 0.8);
+    svg.appendChild(line);
+    const t = document.createElementNS(svgNS, 'text');
+    t.setAttribute('x', 14); t.setAttribute('y', y + 5);
+    t.setAttribute('font-size', '15'); t.setAttribute('font-weight', '700');
+    t.setAttribute('fill', '#2b2620');
+    t.textContent = s.label;
+    svg.appendChild(t);
+  });
+  // Noms de notes
+  if (showNames) {
+    STRINGS.forEach((s, i) => {
+      const y = top + i * sh;
+      for (let f = 1; f <= FRETS; f++) {
+        const n = noteAt(i, f);
+        const x = left + (f - 0.5) * fw;
+        const nat = isNatural(n);
+        const c = document.createElementNS(svgNS, 'circle');
+        c.setAttribute('cx', x); c.setAttribute('cy', y); c.setAttribute('r', 11);
+        c.setAttribute('fill', nat ? '#2c5f8a' : '#e8e2d7');
+        svg.appendChild(c);
+        const t = document.createElementNS(svgNS, 'text');
+        t.setAttribute('x', x); t.setAttribute('y', y + 4);
+        t.setAttribute('text-anchor', 'middle'); t.setAttribute('font-size', nat ? '11' : '9');
+        t.setAttribute('font-weight', '700');
+        t.setAttribute('fill', nat ? 'white' : '#9a917f');
+        t.textContent = disp(n);
+        svg.appendChild(t);
+      }
+    });
+  }
+  // Liens entre cases (diagonales, triangles…)
+  if (opts.links) {
+    opts.links.forEach(l => {
+      const x1 = l.from.fret === 0 ? left - 16 : left + (l.from.fret - 0.5) * fw;
+      const y1 = top + l.from.string * sh;
+      const x2 = l.to.fret === 0 ? left - 16 : left + (l.to.fret - 0.5) * fw;
+      const y2 = top + l.to.string * sh;
+      const line = document.createElementNS(svgNS, 'line');
+      line.setAttribute('x1', x1); line.setAttribute('y1', y1);
+      line.setAttribute('x2', x2); line.setAttribute('y2', y2);
+      line.setAttribute('stroke', l.color || '#2c5f8a');
+      line.setAttribute('stroke-width', 2.5);
+      line.setAttribute('stroke-dasharray', '6 4');
+      svg.appendChild(line);
+    });
+  }
+  // Pastilles multiples avec étiquette
+  if (opts.dots) {
+    opts.dots.forEach(d => {
+      const y = top + d.string * sh;
+      const x = d.fret === 0 ? left - 16 : left + (d.fret - 0.5) * fw;
+      const c = document.createElementNS(svgNS, 'circle');
+      c.setAttribute('cx', x); c.setAttribute('cy', y); c.setAttribute('r', 12);
+      c.setAttribute('fill', d.color || '#2c5f8a');
+      svg.appendChild(c);
+      if (d.label) {
+        const t = document.createElementNS(svgNS, 'text');
+        t.setAttribute('x', x); t.setAttribute('y', y + 4);
+        t.setAttribute('text-anchor', 'middle'); t.setAttribute('font-size', '11');
+        t.setAttribute('font-weight', '700'); t.setAttribute('fill', 'white');
+        t.textContent = d.label;
+        svg.appendChild(t);
+      }
+    });
+  }
+  // Point unique
+  if (dot) {
+    const y = top + dot.string * sh;
+    const x = dot.fret === 0 ? left - 16 : left + (dot.fret - 0.5) * fw;
+    const c = document.createElementNS(svgNS, 'circle');
+    c.setAttribute('cx', x); c.setAttribute('cy', y); c.setAttribute('r', 12);
+    c.setAttribute('fill', '#c0392b');
+    svg.appendChild(c);
+  }
+  // Zones cliquables
+  if (clickable) {
+    STRINGS.forEach((s, i) => {
+      const y = top + i * sh;
+      for (let f = 0; f <= FRETS; f++) {
+        const x = f === 0 ? left - 16 : left + (f - 0.5) * fw;
+        const hit = document.createElementNS(svgNS, 'circle');
+        hit.setAttribute('cx', x); hit.setAttribute('cy', y); hit.setAttribute('r', Math.min(fw, sh) / 2.1);
+        hit.setAttribute('fill', 'transparent');
+        hit.style.cursor = 'pointer';
+        hit.addEventListener('click', () => onCellClick(i, f, x, y, svg));
+        svg.appendChild(hit);
+        if (f === 0) {
+          const ring = document.createElementNS(svgNS, 'circle');
+          ring.setAttribute('cx', x); ring.setAttribute('cy', y); ring.setAttribute('r', 9);
+          ring.setAttribute('fill', 'none'); ring.setAttribute('stroke', '#b8a98e');
+          ring.setAttribute('stroke-width', 1.5);
+          svg.appendChild(ring);
+        }
+      }
+    });
+  }
+  const container = document.getElementById(containerId);
+  container.innerHTML = '';
+  container.style.overflowX = 'auto';
+  container.style.webkitOverflowScrolling = 'touch';
+  container.appendChild(svg);
+  return svg;
+}
+
+// ---------- Schémas de la leçon ----------
+drawFretboard('fb-octave', {
+  links: [
+    { from: { string: 2, fret: 5 }, to: { string: 0, fret: 7 }, color: '#2c5f8a' },
+    { from: { string: 3, fret: 2 }, to: { string: 1, fret: 4 }, color: '#c0392b' },
+  ],
+  dots: [
+    { string: 2, fret: 5, color: '#2c5f8a', label: 'D' },
+    { string: 0, fret: 7, color: '#2c5f8a', label: 'D' },
+    { string: 3, fret: 2, color: '#c0392b', label: 'F♯' },
+    { string: 1, fret: 4, color: '#c0392b', label: 'F♯' },
+  ],
+});
+drawFretboard('fb-quinte', {
+  links: [
+    { from: { string: 2, fret: 5 }, to: { string: 1, fret: 7 }, color: '#27764b' },
+    { from: { string: 2, fret: 5 }, to: { string: 3, fret: 5 }, color: '#9a6b1f' },
+  ],
+  dots: [
+    { string: 2, fret: 5, color: '#2c5f8a', label: 'D' },
+    { string: 1, fret: 7, color: '#27764b', label: 'A' },
+    { string: 3, fret: 5, color: '#9a6b1f', label: 'A' },
+  ],
+});
+drawFretboard('fb-triangle', {
+  links: [
+    { from: { string: 3, fret: 2 }, to: { string: 2, fret: 4 }, color: '#27764b' },
+    { from: { string: 2, fret: 4 }, to: { string: 1, fret: 4 }, color: '#27764b' },
+    { from: { string: 3, fret: 2 }, to: { string: 1, fret: 4 }, color: '#2c5f8a' },
+  ],
+  dots: [
+    { string: 3, fret: 2, color: '#2c5f8a', label: 'F♯' },
+    { string: 2, fret: 4, color: '#27764b', label: 'C♯' },
+    { string: 1, fret: 4, color: '#2c5f8a', label: 'F♯' },
+  ],
+});
+drawFretboard('fb-bj', {
+  dots: [
+    { string: 3, fret: 2, color: '#2c5f8a', label: 'F♯' },
+    { string: 2, fret: 4, color: '#27764b', label: 'C♯' },
+    { string: 1, fret: 4, color: '#2c5f8a', label: 'F♯' },
+    { string: 1, fret: 2, color: '#7a7265', label: 'E' },
+    { string: 2, fret: 2, color: '#7a7265', label: 'B' },
+  ],
+});
+
+// ---------- Sessions chronométrées (20 questions, score = temps + 5 s par erreur) ----------
+function fmtTime(sec) {
+  const m = Math.floor(sec / 60), s = Math.floor(sec % 60);
+  return `${m}:${String(s).padStart(2, '0')}`;
+}
+function loadBest(key) { try { return JSON.parse(localStorage.getItem(key)); } catch (e) { return null; } }
+function saveBest(key, v) { try { localStorage.setItem(key, JSON.stringify(v)); } catch (e) {} }
+
+function createSession(cfg) {
+  // cfg : { len, key, statusId, resultId, startId, onQuestion, onDone }
+  const st = { i: 0, err: 0, t0: 0, on: false, int: null };
+  const statusEl = document.getElementById(cfg.statusId);
+  const resultEl = document.getElementById(cfg.resultId);
+  const btn = document.getElementById(cfg.startId);
+  function tick() {
+    const el = (performance.now() - st.t0) / 1000;
+    statusEl.textContent = `Question ${Math.min(st.i + 1, cfg.len)}/${cfg.len} · ⏱ ${fmtTime(el)} · ✘ ${st.err}`;
+  }
+  btn.addEventListener('click', () => {
+    st.i = 0; st.err = 0; st.t0 = performance.now(); st.on = true;
+    resultEl.innerHTML = '';
+    btn.textContent = '↻ Recommencer';
+    clearInterval(st.int);
+    st.int = setInterval(tick, 250);
+    tick();
+    cfg.onQuestion();
+  });
+  return {
+    running: () => st.on,
+    wrong() { if (st.on) { st.err++; tick(); } },
+    right() {
+      if (!st.on) return false;
+      st.i++;
+      if (st.i < cfg.len) { tick(); return true; }
+      st.on = false;
+      clearInterval(st.int);
+      const elapsed = (performance.now() - st.t0) / 1000;
+      const score = elapsed + 5 * st.err;
+      const best = loadBest(cfg.key);
+      let extra;
+      if (!best || score < best.score) {
+        saveBest(cfg.key, { score: score, time: elapsed, errors: st.err });
+        extra = best ? ` · 🏆 record battu (ancien : ${fmtTime(best.score)}) !` : ' · 🏆 premier score enregistré !';
+      } else {
+        extra = ` · meilleur : ${fmtTime(best.score)}`;
+      }
+      const errTxt = st.err === 0 ? 'sans erreur' : `${st.err} erreur${st.err > 1 ? 's' : ''} (+${st.err * 5} s)`;
+      resultEl.innerHTML = `✅ 20/20 — temps ${fmtTime(elapsed)}, ${errTxt} → <strong>score ${fmtTime(score)}</strong>${extra}`;
+      statusEl.textContent = '';
+      if (cfg.onDone) cfg.onDone();
+      return false;
+    },
+  };
+}
+
+// ---------- Quiz 1 : place l'intervalle ----------
+let qaCur = null, qaLock = false;
+const sa = createSession({
+  len: 20, key: 'btb-l2-place',
+  statusId: 'qa-status', resultId: 'qa-result', startId: 'qa-start',
+  onQuestion: qaNext,
+  onDone: () => {
+    document.getElementById('qa-question').textContent = '🎉 Session terminée !';
+    drawFretboard('qa-board', {});
+  },
+});
+function qaNext() {
+  qaLock = false;
+  const fb = document.getElementById('qa-feedback');
+  fb.textContent = ''; fb.className = 'feedback';
+  const kind = Math.random() < 0.5 ? 'quinte' : 'octave';
+  let s, f;
+  if (kind === 'quinte') { s = 1 + Math.floor(Math.random() * 3); f = Math.floor(Math.random() * 11); }
+  else { s = 2 + Math.floor(Math.random() * 2); f = Math.floor(Math.random() * 11); }
+  qaCur = { kind: kind, s: s, f: f, targetAbs: absAt(s, f) + (kind === 'quinte' ? 7 : 12) };
+  document.getElementById('qa-question').textContent =
+    `${kind === 'quinte' ? 'Place la quinte' : "Place l'octave"} de ${disp(noteAt(s, f))} (${STRINGS[s].label}-${f}) — vers l'aigu.`;
+  drawFretboard('qa-board', {
+    dots: [{ string: s, fret: f, color: '#7a7265', label: disp(noteAt(s, f)) }],
+    clickable: true,
+    onCellClick: qaClick,
+  });
+}
+function qaClick(s, f, x, y, svg) {
+  if (!sa.running() || qaLock) return;
+  const { kind, targetAbs } = qaCur;
+  const fb = document.getElementById('qa-feedback');
+  const svgNS = 'http://www.w3.org/2000/svg';
+  const c = document.createElementNS(svgNS, 'circle');
+  c.setAttribute('cx', x); c.setAttribute('cy', y); c.setAttribute('r', 12);
+  svg.appendChild(c);
+  const abs = absAt(s, f);
+  const note = disp(noteAt(s, f));
+  const compact = kind === 'quinte'
+    ? { string: qaCur.s - 1, fret: qaCur.f + 2 }
+    : { string: qaCur.s - 2, fret: qaCur.f + 2 };
+  if (abs === targetAbs) {
+    qaLock = true;
+    c.setAttribute('fill', '#27764b');
+    const shape = kind === 'quinte' ? "corde d'à côté, +2 cases" : 'la diagonale 2+2';
+    const elsewhere = (s === compact.string && f === compact.fret)
+      ? '' : ` (position valable — la forme compacte était ${STRINGS[compact.string].label}-${compact.fret})`;
+    fb.textContent = `✔ ${note}, ${kind === 'quinte' ? 'la quinte' : "l'octave"} — ${shape}.${elsewhere}`;
+    fb.className = 'feedback ok';
+    if (sa.right()) setTimeout(qaNext, 800);
+  } else {
+    c.setAttribute('fill', '#c0392b');
+    sa.wrong();
+    let msg;
+    if (kind === 'quinte' && abs === absAt(qaCur.s, qaCur.f) - 5) {
+      msg = `✘ ${note}, c'est la quinte… en dessous (même nom, une octave plus bas). On la demandait vers l'aigu : corde d'à côté, +2 cases.`;
+    } else if (kind === 'octave' && abs === absAt(qaCur.s, qaCur.f)) {
+      msg = `✘ Même hauteur = unisson, pas l'octave. L'octave est plus aiguë : la diagonale +2 cordes, +2 cases.`;
+    } else {
+      const hint = kind === 'quinte' ? "corde d'à côté (vers l'aigu), 2 cases plus haut." : 'la diagonale : +2 cordes ET +2 cases.';
+      msg = `✘ Ça, c'est ${note} (${STRINGS[s].label}-${f}). Indice : ${hint}`;
+    }
+    fb.textContent = msg;
+    fb.className = 'feedback ko';
+    setTimeout(() => c.remove(), 900);
+  }
+}
+document.getElementById('qa-question').textContent = 'Clique sur « Démarrer la session » quand tu es prêt.';
+drawFretboard('qa-board', {});
+
+// ---------- Quiz 2 : quel intervalle ? ----------
+let qbCur = null, qbLock = false;
+const QB_KINDS = ['unisson', 'quinte', 'octave'];
+const sb = createSession({
+  len: 20, key: 'btb-l2-ident',
+  statusId: 'qb-status', resultId: 'qb-result', startId: 'qb-start',
+  onQuestion: qbNext,
+  onDone: () => {
+    document.getElementById('qb-question').textContent = '🎉 Session terminée !';
+    document.getElementById('qb-answers').innerHTML = '';
+    drawFretboard('qb-board', {});
+  },
+});
+function qbNext() {
+  qbLock = false;
+  const fb = document.getElementById('qb-feedback');
+  fb.textContent = ''; fb.className = 'feedback';
+  const kind = QB_KINDS[Math.floor(Math.random() * 3)];
+  let a, b; // a = position grave, b = position aiguë (ou égale)
+  if (kind === 'unisson') {
+    const s = Math.floor(Math.random() * 3);            // G, D ou A comme corde du haut
+    const f = Math.floor(Math.random() * 8);            // 0..7
+    a = { string: s + 1, fret: f + 5 };
+    b = { string: s, fret: f };
+  } else if (kind === 'quinte') {
+    if (Math.random() < 0.6) {
+      const s = 1 + Math.floor(Math.random() * 3);      // forme compacte
+      const f = Math.floor(Math.random() * 11);
+      a = { string: s, fret: f };
+      b = { string: s - 1, fret: f + 2 };
+    } else {
+      const s = Math.floor(Math.random() * 4);          // même corde, +7
+      const f = Math.floor(Math.random() * 6);
+      a = { string: s, fret: f };
+      b = { string: s, fret: f + 7 };
+    }
+  } else {
+    const v = Math.random();
+    if (v < 0.5) {
+      const s = 2 + Math.floor(Math.random() * 2);      // diagonale 2+2
+      const f = Math.floor(Math.random() * 11);
+      a = { string: s, fret: f };
+      b = { string: s - 2, fret: f + 2 };
+    } else if (v < 0.75) {
+      const s = Math.floor(Math.random() * 4);          // corde à vide → case 12
+      a = { string: s, fret: 0 };
+      b = { string: s, fret: 12 };
+    } else {
+      const s = Math.floor(Math.random() * 3);          // pont de la case 7
+      const f = Math.floor(Math.random() * 6);
+      a = { string: s + 1, fret: f };
+      b = { string: s, fret: f + 7 };
+    }
+  }
+  qbCur = { kind: kind, a: a, b: b };
+  document.getElementById('qb-question').textContent = 'Quel est l’intervalle entre les deux pastilles ?';
+  drawFretboard('qb-board', { dots: [
+    { string: a.string, fret: a.fret, color: '#7a7265', label: disp(noteAt(a.string, a.fret)) },
+    { string: b.string, fret: b.fret, color: '#2c5f8a', label: disp(noteAt(b.string, b.fret)) },
+  ]});
+  const answers = document.getElementById('qb-answers');
+  answers.innerHTML = '';
+  [['unisson', 'Unisson'], ['quinte', 'Quinte'], ['octave', 'Octave']].forEach(([val, lab]) => {
+    const btn = document.createElement('button');
+    btn.textContent = lab;
+    btn.addEventListener('click', () => {
+      if (!sb.running() || qbLock) return;
+      if (val === qbCur.kind) {
+        qbLock = true;
+        btn.classList.add('good');
+        fb.textContent = {
+          unisson: '✔ Unisson — même hauteur exactement : la règle « −5 » de la leçon 1.',
+          quinte: "✔ Quinte — 7 demi-tons : corde d'à côté +2 cases (ou +7 sur la même corde).",
+          octave: '✔ Octave — 12 demi-tons : la diagonale 2+2 (ou case 12, ou le pont de la case 7).',
+        }[val];
+        fb.className = 'feedback ok';
+        if (sb.right()) setTimeout(qbNext, 800);
+      } else {
+        btn.classList.add('bad');
+        sb.wrong();
+        fb.textContent = '✘ Non. Compare : même nom + même hauteur = unisson ; même nom plus aigu = octave ; nom différent = quinte.';
+        fb.className = 'feedback ko';
+        setTimeout(() => btn.classList.remove('bad'), 600);
+      }
+    });
+    answers.appendChild(btn);
+  });
+}
+document.getElementById('qb-question').textContent = 'Clique sur « Démarrer la session » quand tu es prêt.';
+drawFretboard('qb-board', {});
+
+// ---------- Drill basse en main (exercice 4) ----------
+let dTimer = null;
+function dPick() {
+  const pool = document.getElementById('d-sharps').checked ? NOTES : NATURALS;
+  const n = pool[Math.floor(Math.random() * pool.length)];
+  document.getElementById('d-note').textContent = disp(n);
+}
+document.getElementById('d-next').addEventListener('click', dPick);
+document.getElementById('d-auto').addEventListener('click', function () {
+  if (dTimer) {
+    clearInterval(dTimer); dTimer = null;
+    this.textContent = '▶ Mode auto (15 s)';
+  } else {
+    dPick();
+    dTimer = setInterval(dPick, 15000);
+    this.textContent = '⏸ Stop';
+  }
+});
+</script>
+</body>
+</html>

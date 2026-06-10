@@ -28,12 +28,21 @@
   .mono { font-family: "SF Mono", Menlo, monospace; font-size: 0.88em; background: #f1ece3; padding: 0.05em 0.3em; border-radius: 4px; }
   footer { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
   a { color: var(--blue); }
-  @media print { body { font-size: 11pt; } .rules { grid-template-columns: 1fr 1fr; } }
+  .home-link { font-size: 0.88rem; margin-bottom: 0.8rem; }
+  .home-link a { color: var(--muted); text-decoration: none; }
+  .home-link a:hover { color: var(--blue); text-decoration: underline; }
+  @media print { body { font-size: 11pt; } .rules { grid-template-columns: 1fr 1fr; } .home-link { display: none; } }
+  @media (max-width: 640px) {
+    .wrap { padding: 1.5rem 1rem 2.5rem; }
+    table { display: block; overflow-x: auto; }
+    .rules { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
 <div class="wrap">
 
+<div class="home-link"><a href="../index.html">← Toutes les leçons</a></div>
 <div class="kicker">Référence · Module 1 — Socle</div>
 <h1>Carte du manche — basse 4 cordes (E A D G)</h1>
 <p class="legend">Cases 0 à 12. En <b style="color:#2c5f8a">bleu gras</b> : notes naturelles. En gris : dièses/bémols (deux noms, même case). Fond crème : cases marquées (3 · 5 · 7 · 9 · 12). Après la case 12, tout se répète une octave plus haut (case 13 = case 1, etc.).</p>
@@ -92,7 +101,7 @@
 </table>
 
 <footer>
-  Document de référence du workspace <i>music-theory-bass</i> · Issu de la <a href="../lessons/0001-la-carte-du-manche.html">leçon 1 — La carte du manche</a> · Conçu pour être imprimé.
+  Document de référence du workspace <i>music-theory-bass</i> · Issu de la <a href="../lessons/0001-la-carte-du-manche.html">leçon 1 — La carte du manche</a> · Voir aussi la fiche <a href="intervalles.html">intervalles</a> · Conçu pour être imprimé.
 </footer>
 
 </div>

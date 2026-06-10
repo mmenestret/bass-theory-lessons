@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Référence — Intervalles sur le manche (basse 4 cordes, E A D G)</title>
+<style>
+  :root {
+    --ink: #2b2620; --muted: #7a7265; --accent: #c0392b; --blue: #2c5f8a;
+    --green: #27764b; --border: #e6e0d6; --wood: #f3e9d8;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #faf8f4; color: var(--ink); font-family: "Avenir Next", "Segoe UI", system-ui, sans-serif; line-height: 1.55; font-size: 15px; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 2rem 1.5rem 3rem; }
+  .home-link { font-size: 0.88rem; margin-bottom: 0.8rem; }
+  .home-link a { color: var(--muted); text-decoration: none; }
+  .home-link a:hover { color: var(--blue); text-decoration: underline; }
+  h1 { font-family: Georgia, serif; font-size: 1.7rem; margin: 0 0 0.2rem; }
+  .kicker { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.72rem; color: var(--accent); font-weight: 700; }
+  h2 { font-family: Georgia, serif; font-size: 1.2rem; margin-top: 1.8rem; border-left: 4px solid var(--accent); padding-left: 0.6rem; }
+  table { border-collapse: collapse; width: 100%; margin: 0.8rem 0; font-size: 0.88rem; }
+  th, td { border: 1px solid var(--border); padding: 0.4rem 0.55rem; text-align: center; }
+  th { background: #f4efe6; }
+  .legend { color: var(--muted); font-size: 0.85rem; }
+  .rules { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin: 1rem 0; }
+  .rule { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 0.8rem 1rem; }
+  .rule b { color: var(--blue); }
+  .mono { font-family: "SF Mono", Menlo, monospace; font-size: 0.88em; background: #f1ece3; padding: 0.05em 0.3em; border-radius: 4px; }
+  footer { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+  a { color: var(--blue); }
+  @media print { body { font-size: 11pt; } .rules { grid-template-columns: 1fr 1fr; } .home-link { display: none; } }
+  @media (max-width: 640px) {
+    .wrap { padding: 1.5rem 1rem 2.5rem; }
+    table { display: block; overflow-x: auto; }
+    .rules { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="home-link"><a href="../index.html">← Toutes les leçons</a></div>
+<div class="kicker">Référence · Module 1 — Socle</div>
+<h1>Intervalles sur le manche — basse 4 cordes (E A D G)</h1>
+<p class="legend">Un intervalle = une distance en demi-tons = <strong>une forme géométrique fixe sur le manche</strong>, valable partout. Cette fiche grandit au fil des leçons : pour l'instant, les intervalles vus en leçon 2.</p>
+
+<h2>Les intervalles connus</h2>
+<table>
+  <tr><th>Intervalle</th><th>EN</th><th>Demi-tons</th><th>Forme principale</th><th>Autres positions</th><th>Exemple</th></tr>
+  <tr>
+    <td><strong>Unisson</strong></td><td>unison</td><td>0</td>
+    <td>Corde du dessus, <strong>5 cases plus bas</strong> (« −5 »)</td>
+    <td>case 5 = corde suivante à vide</td>
+    <td><span class="mono">E-8 (C) = A-3 (C)</span></td>
+  </tr>
+  <tr>
+    <td><strong>Quinte juste</strong></td><td>perfect fifth</td><td>7</td>
+    <td>Corde d'à côté (vers l'aigu), <strong>+2 cases</strong></td>
+    <td>même corde, +7 cases · <em>quinte en dessous</em> : même case, corde du grave</td>
+    <td><span class="mono">D = A-5 → quinte A = D-7</span></td>
+  </tr>
+  <tr>
+    <td><strong>Octave</strong></td><td>octave</td><td>12</td>
+    <td><strong>+2 cordes, +2 cases</strong> (« 2+2 »)</td>
+    <td>même corde, +12 · corde à vide ↔ case 12 · pont de la case 7</td>
+    <td><span class="mono">D = A-5 → octave D = G-7</span></td>
+  </tr>
+</table>
+
+<h2>Le triangle du bassiste</h2>
+<div class="rules">
+  <div class="rule"><b>Fondamentale + quinte + octave.</b> Une seule forme, déplaçable partout, qui ne change jamais : depuis la fondamentale, quinte = corde d'à côté +2 cases ; octave = encore une corde, même case que la quinte. <span class="mono">F♯ : E-2 · C♯ : A-4 · F♯ : D-4</span> (<em>Billie Jean</em>).</div>
+  <div class="rule"><b>La quinte est neutre.</b> Elle sonne juste sur un accord majeur <em>et</em> mineur : fondamentale + quinte = le choix sûr quand on ne sait pas quoi jouer. La <em>quinte en dessous</em> (même case, corde du grave) donne la « pompe » country-reggae.</div>
+</div>
+
+<h2>Triangles du répertoire</h2>
+<table>
+  <tr><th>Morceau</th><th>Fondamentale</th><th>Quinte</th><th>Octave</th></tr>
+  <tr><td>I Feel Good — James Brown</td><td>D · <span class="mono">A-5</span></td><td>A · <span class="mono">D-7</span></td><td>D · <span class="mono">G-7</span></td></tr>
+  <tr><td>Billie Jean — Michael Jackson</td><td>F♯ · <span class="mono">E-2</span></td><td>C♯ · <span class="mono">A-4</span></td><td>F♯ · <span class="mono">D-4</span></td></tr>
+  <tr><td>Do I Wanna Know? — Arctic Monkeys</td><td>G · <span class="mono">E-3</span></td><td>D · <span class="mono">A-5</span></td><td>G · <span class="mono">D-5</span></td></tr>
+  <tr><td>Time Is Running Out — Muse</td><td>A · <span class="mono">E-5</span></td><td>E · <span class="mono">A-7</span></td><td>A · <span class="mono">D-7</span></td></tr>
+</table>
+
+<p class="legend">À venir dans cette fiche, au fil des leçons : tierces majeure/mineure, quarte, septièmes…</p>
+
+<footer>
+  Document de référence du workspace <i>music-theory-bass</i> · Issu de la <a href="../lessons/0002-octave-et-quinte.html">leçon 2 — L'octave et la quinte</a> · Voir aussi la <a href="carte-du-manche.html">carte du manche</a> · Conçu pour être imprimé.
+</footer>
+
+</div>
+</body>
+</html>
