@@ -134,7 +134,7 @@
 </div>
 
 <h2>3. Le socle : 3 règles pour tout retrouver</h2>
-<p>Personne ne mémorise 48 cases par cœur. On mémorise un petit socle logique — trois règles, dans cet ordre — et on navigue à partir de lui.</p>
+<p>Personne ne mémorise 48 cases par cœur. On mémorise trois règles géométriques — trois <em>gestes</em>, toujours les mêmes où qu'on soit sur le manche — et on en tire une conséquence qui divise le travail par deux.</p>
 
 <div class="card rule-card">
   <span class="tag" style="color:var(--blue)">Règle 1 — La diagonale d'octave « 2+2 »</span>
@@ -142,7 +142,17 @@
 </div>
 
 <div class="card rule-card">
-  <span class="tag" style="color:var(--blue)">Règle 2 — Tu n'as que 2 cordes à apprendre</span>
+  <span class="tag" style="color:var(--blue)">Règle 2 — La case 7</span>
+  <p style="margin:0.4rem 0 0">La case 7 d'une corde = <strong>la corde du dessous (plus grave) à vide, une octave plus haut</strong> : A-7 = E, D-7 = A, G-7 = D. Et la règle se décale avec toi : <strong>corde du dessus, 7 cases plus haut = même nom de note, une octave au-dessus</strong> (E-3 = G → A-10 = G). C'est l'octave entre cordes <em>voisines</em>, là où la 2+2 saute deux cordes.</p>
+</div>
+
+<div class="card rule-card">
+  <span class="tag" style="color:var(--blue)">Règle 3 — L'unisson « −5 »</span>
+  <p style="margin:0.4rem 0 0">N'importe quelle note = <strong>la corde du dessus, 5 cases plus bas</strong> — exactement la même note, à l'unisson. C (corde E, case 8) = C (corde A, case 3). Cas particulier à connaître : <strong>case 5 = la corde suivante à vide</strong> (E-5 = A, A-5 = D, D-5 = G — c'est comme ça qu'on accorde une basse à l'oreille). Retiens le duo : <strong>case 5 = unisson, case 7 = octave</strong> — les deux ponts entre cordes voisines.</p>
+</div>
+
+<div class="card rule-card" style="border-left-color:var(--green)">
+  <span class="tag" style="color:var(--green)">La conséquence — tu n'as que 2 cordes à apprendre</span>
   <p style="margin:0.4rem 0">Prends une note sur la corde E — disons G, case 3. Applique la diagonale d'octave : +2 cordes, +2 cases → corde D, case 5 : <strong>encore un G</strong>. Et ça marche pour <em>n'importe quelle</em> case. Autrement dit : <strong>la corde D, c'est la corde E décalée de 2 cases</strong>. Même chose entre A et G. Donc : <strong>apprends E et A à fond, D et G s'en déduisent.</strong></p>
   <div id="fb-copies"></div>
   <p class="note-fr" style="margin:0.2rem 0 0.8rem">Les deux copies : E-3 (G) → D-5 (G) en bleu, A-3 (C) → G-5 (C) en rouge. C'est toujours la diagonale 2+2.</p>
@@ -160,16 +170,10 @@
   <p class="note-fr" style="margin:0.8rem 0 0">À force de l'utiliser, D-7 = A deviendra un réflexe direct : la dérivation est un échafaudage, pas une béquille permanente.</p>
 </div>
 
-<div class="card rule-card">
-  <span class="tag" style="color:var(--blue)">Règle 3 — L'unisson « −5 »</span>
-  <p style="margin:0.4rem 0 0">N'importe quelle note = <strong>la corde du dessus, 5 cases plus bas</strong> — exactement la même note, à l'unisson. C (corde E, case 8) = C (corde A, case 3). Cas particulier à connaître : <strong>case 5 = la corde suivante à vide</strong> (E-5 = A, A-5 = D, D-5 = G — c'est comme ça qu'on accorde une basse à l'oreille).</p>
-</div>
-
 <h2>4. Les accélérateurs — à survoler pour aujourd'hui</h2>
-<p>Quatre raccourcis qui font gagner du temps <em>une fois le socle en place</em>. Survole-les sans chercher à les retenir : ils t'attendent sur <a href="../reference/carte-du-manche.html">la fiche de référence</a>, reviens-y quand les 3 règles tournent toutes seules.</p>
+<p>Trois raccourcis qui font gagner du temps <em>une fois le socle en place</em>. Survole-les sans chercher à les retenir : ils t'attendent sur <a href="../reference/carte-du-manche.html">la fiche de référence</a>, reviens-y quand les 3 règles tournent toutes seules.</p>
 <ul>
   <li><strong>« Sur les points, tout est naturel »</strong> : cases 3-5-7 = G-A-B sur la corde E, C-D-E sur la corde A. Piège : la case 9 est le point « dièse » — ancre plutôt les cases 8 et 10.</li>
-  <li><strong>La règle de la case 7</strong> : case 7 = la corde du dessous (plus grave) à l'octave. A-7 = E, D-7 = A, G-7 = D.</li>
   <li><strong>Case 12 et au-delà</strong> : case 12 = la corde à vide à l'octave, puis toute la carte se rejoue (case 14 = case 2…).</li>
   <li><strong>Ne compte jamais depuis le sillet</strong> : toute case est à 2 cases maximum d'un repère connu. Si tu comptes depuis la case 0, tu n'utilises pas tes phares.</li>
 </ul>
@@ -507,7 +511,7 @@ function qNext() {
   qlock = false;
   const answers = document.getElementById('q1-answers');
   answers.innerHTML = '';
-  const type = ['name', 'find', 'copie', 'octave', 'unisson'][Math.floor(Math.random() * 5)];
+  const type = ['name', 'find', 'copie', 'octave', 'case7', 'unisson'][Math.floor(Math.random() * 6)];
   if (type === 'name') {
     // « quelle est cette note ? » : répondre avec les boutons
     const s = Math.floor(Math.random() * 4);
@@ -560,6 +564,12 @@ function qNext() {
       src = { string: sIdx, fret: f };
       tgt = { string: sIdx - 2, fret: f + 2 };
       prompt = `Diagonale « 2+2 » — où est l'octave (vers l'aigu) de ${STRINGS[sIdx].label}-${f} ?`;
+    } else if (type === 'case7') {
+      const sIdx = 1 + Math.floor(Math.random() * 3);      // D, A ou E
+      const f = Math.floor(Math.random() * 6);             // cases 0..5
+      src = { string: sIdx, fret: f };
+      tgt = { string: sIdx - 1, fret: f + 7 };
+      prompt = `Règle de la case 7 — le même nom que ${STRINGS[sIdx].label}-${f}, une octave plus haut, sur la corde ${STRINGS[tgt.string].label} ?`;
     } else {
       const sIdx = 1 + Math.floor(Math.random() * 3);      // D, A ou E
       const f = 5 + Math.floor(Math.random() * 8);         // cases 5..12
@@ -608,6 +618,7 @@ function qClick(s, f, x, y, svg) {
     setFb({
       copie: `✔ ${STRINGS[s].label}-${f} = ${note} : la corde ${STRINGS[src.string].label} est la copie de ${STRINGS[s].label} décalée de 2 cases.`,
       octave: `✔ ${note} à l'octave : +2 cordes, +2 cases.`,
+      case7: `✔ ${note}, une octave au-dessus : corde du dessus, 7 cases plus haut (le pont de la case 7).`,
       unisson: `✔ Même hauteur exactement : ${STRINGS[src.string].label}-${src.fret} = ${STRINGS[s].label}-${f} (${note}).`,
     }[type], true);
     if (sess.right()) setTimeout(qNext, 900);
@@ -617,6 +628,7 @@ function qClick(s, f, x, y, svg) {
     const ruleHint = {
       copie: `depuis ${STRINGS[src.string].label}-${src.fret}, saute 2 cordes et recule de 2 cases`,
       octave: 'la diagonale, +2 cordes ET +2 cases',
+      case7: 'corde du dessus, 7 cases plus haut',
       unisson: 'corde du dessus, 5 cases plus bas',
     }[type];
     const where = s === tgt.string
